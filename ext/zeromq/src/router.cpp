@@ -66,6 +66,7 @@ void zmq::router_t::xattach_pipe (pipe_t *pipe_, bool subscribe_to_all_)
         errno_assert (rc == 0);
 
         rc = pipe_->write (&probe_msg_);
+#pragma unused(rc)
         // zmq_assert (rc) is not applicable here, since it is not a bug.
         pipe_->flush ();
 
@@ -373,7 +374,9 @@ bool zmq::router_t::identify_peer (pipe_t *pipe_)
         unsigned char buf [5];
         buf [0] = 0;
         put_uint32 (buf + 1, next_peer_id++);
-        identity = blob_t (buf, sizeof buf);
+        blob_t temp = blob_t(buf,sizeof buf);
+        assert(temp.length());
+        identity = temp;
     }
     else {
         msg.init ();
@@ -386,11 +389,15 @@ bool zmq::router_t::identify_peer (pipe_t *pipe_)
             unsigned char buf [5];
             buf [0] = 0;
             put_uint32 (buf + 1, next_peer_id++);
-            identity = blob_t (buf, sizeof buf);
+            blob_t temp =blob_t (buf, sizeof buf);
+            assert(temp.length());
+            identity = temp;
             msg.close ();
         }
         else {
-            identity = blob_t ((unsigned char*) msg.data (), msg.size ());
+            blob_t temp =blob_t ((unsigned char*) msg.data (), msg.size ());
+            assert (temp.length());
+            identity = temp;
             outpipes_t::iterator it = outpipes.find (identity);
             msg.close ();
 

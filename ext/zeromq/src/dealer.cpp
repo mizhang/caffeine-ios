@@ -44,7 +44,7 @@ void zmq::dealer_t::xattach_pipe (pipe_t *pipe_, bool subscribe_to_all_)
         int rc = probe_msg_.init ();
         errno_assert (rc == 0);
 
-        rc = pipe_->write (&probe_msg_);
+        pipe_->write (&probe_msg_);
         // zmq_assert (rc) is not applicable here, since it is not a bug.
         pipe_->flush ();
 

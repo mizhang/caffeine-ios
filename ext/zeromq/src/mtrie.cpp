@@ -93,6 +93,7 @@ bool zmq::mtrie_t::add_helper (unsigned char *prefix_, size_t size_,
             unsigned char oldc = min;
             mtrie_t *oldp = next.node;
             count = (min < c ? c - min : min - c) + 1;
+            assert(count >= 1);
             next.table = (mtrie_t**)
                 malloc (sizeof (mtrie_t*) * count);
             alloc_assert (next.table);

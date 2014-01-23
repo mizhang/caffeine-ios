@@ -36,7 +36,9 @@ zmq::mechanism_t::~mechanism_t ()
 
 void zmq::mechanism_t::set_peer_identity (const void *id_ptr, size_t id_size)
 {
-    identity = blob_t (static_cast <const unsigned char*> (id_ptr), id_size);
+    blob_t temp =blob_t (static_cast <const unsigned char*> (id_ptr), id_size);
+    assert(temp.length());
+    identity = temp;
 }
 
 void zmq::mechanism_t::peer_identity (msg_t *msg_)

@@ -50,7 +50,7 @@
 namespace zmq
 {
     const char *errno_to_string (int errno_);
-    void zmq_abort (const char *errmsg_);
+    void zmq_abort (const char *errmsg_) __attribute__((__noreturn__));
 }
 
 #ifdef ZMQ_HAVE_WINDOWS
@@ -105,23 +105,12 @@ namespace zmq
 //  in its stead because standard assert on Win32 in broken - it prints nothing
 //  when used within the scope of JNI library.
 #define zmq_assert(x) \
-    do {\
-        if (unlikely (!(x))) {\
-            fprintf (stderr, "Assertion failed: %s (%s:%d)\n", #x, \
-                __FILE__, __LINE__);\
-            zmq::zmq_abort (#x);\
-        }\
-    } while (false) 
+    assert(x);
 
 //  Provides convenient way to check for errno-style errors.
 #define errno_assert(x) \
-    do {\
-        if (unlikely (!(x))) {\
-            const char *errstr = strerror (errno);\
-            fprintf (stderr, "%s (%s:%d)\n", errstr, __FILE__, __LINE__);\
-            zmq::zmq_abort (errstr);\
-        }\
-    } while (false)
+    assert(x);
+
 
 //  Provides convenient way to check for POSIX errors.
 #define posix_assert(x) \
@@ -145,13 +134,7 @@ namespace zmq
 
 //  Provides convenient way to check whether memory allocation have succeeded.
 #define alloc_assert(x) \
-    do {\
-        if (unlikely (!x)) {\
-            fprintf (stderr, "FATAL ERROR: OUT OF MEMORY (%s:%d)\n",\
-                __FILE__, __LINE__);\
-            zmq::zmq_abort ("FATAL ERROR: OUT OF MEMORY");\
-        }\
-    } while (false)
+    assert(x);
 
 #endif
 

@@ -76,6 +76,7 @@ bool zmq::trie_t::add (unsigned char *prefix_, size_t size_)
             unsigned char oldc = min;
             trie_t *oldp = next.node;
             count = (min < c ? c - min : min - c) + 1;
+            assert(count >= 1);
             next.table = (trie_t**)
                 malloc (sizeof (trie_t*) * count);
             alloc_assert (next.table);

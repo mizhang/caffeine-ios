@@ -672,7 +672,8 @@ int zmq_poll (zmq_pollitem_t *items_, int nitems_, long timeout_)
         usleep (timeout_ * 1000);
         return 0;
 #else
-        return usleep (timeout_ * 1000);
+        assert(timeout_ < UINT_MAX);
+        return usleep ((unsigned int)timeout_ * 1000);
 #endif
     }
 
@@ -728,8 +729,10 @@ int zmq_poll (zmq_pollitem_t *items_, int nitems_, long timeout_)
         else
         if (timeout_ < 0)
             timeout = -1;
-        else
-            timeout = end - now;
+        else {
+            assert(end - now < INT_MAX);
+            timeout = (int)(end - now);
+        }
 
         //  Wait for events.
         while (true) {

@@ -159,7 +159,8 @@ int zmq::plain_mechanism_t::produce_hello (msg_t *msg_) const
     *ptr++ = static_cast <unsigned char> (password.length ());
     memcpy (ptr, password.c_str (), password.length ());
     ptr += password.length ();
-
+#pragma unused(ptr)
+    password.length();
     return 0;
 }
 
@@ -203,7 +204,9 @@ int zmq::plain_mechanism_t::process_hello (msg_t *msg_)
         return -1;
     }
     const std::string password = std::string ((char *) ptr, password_length);
+#pragma unused(ptr)
     ptr += password_length;
+    
     bytes_left -= password_length;
 
     if (bytes_left > 0) {

@@ -158,6 +158,7 @@ namespace zmq
 
             //  There was at least one value prefetched.
             //  Return it to the caller.
+            assert(value_);
             *value_ = queue.front ();
             queue.pop ();
             return true;

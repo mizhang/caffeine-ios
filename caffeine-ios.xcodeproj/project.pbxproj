@@ -36,7 +36,6 @@
 		3AF0F5081890E06B00B6491F /* kqueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0F4801890E06A00B6491F /* kqueue.cpp */; };
 		3AF0F5091890E06B00B6491F /* lb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0F4821890E06A00B6491F /* lb.cpp */; };
 		3AF0F50A1890E06B00B6491F /* mailbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0F4871890E06A00B6491F /* mailbox.cpp */; };
-		3AF0F50B1890E06B00B6491F /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0F4891890E06A00B6491F /* Makefile */; };
 		3AF0F50C1890E06B00B6491F /* mechanism.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0F48C1890E06A00B6491F /* mechanism.cpp */; };
 		3AF0F50D1890E06B00B6491F /* msg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0F48E1890E06A00B6491F /* msg.cpp */; };
 		3AF0F50E1890E06B00B6491F /* mtrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0F4901890E06A00B6491F /* mtrie.cpp */; };
@@ -179,9 +178,6 @@
 		3AF0F4861890E06A00B6491F /* likely.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = likely.hpp; sourceTree = "<group>"; };
 		3AF0F4871890E06A00B6491F /* mailbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mailbox.cpp; sourceTree = "<group>"; };
 		3AF0F4881890E06A00B6491F /* mailbox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mailbox.hpp; sourceTree = "<group>"; };
-		3AF0F4891890E06A00B6491F /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		3AF0F48A1890E06A00B6491F /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
-		3AF0F48B1890E06A00B6491F /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
 		3AF0F48C1890E06A00B6491F /* mechanism.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mechanism.cpp; sourceTree = "<group>"; };
 		3AF0F48D1890E06A00B6491F /* mechanism.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mechanism.hpp; sourceTree = "<group>"; };
 		3AF0F48E1890E06A00B6491F /* msg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = msg.cpp; sourceTree = "<group>"; };
@@ -459,9 +455,6 @@
 				3AF0F4861890E06A00B6491F /* likely.hpp */,
 				3AF0F4871890E06A00B6491F /* mailbox.cpp */,
 				3AF0F4881890E06A00B6491F /* mailbox.hpp */,
-				3AF0F4891890E06A00B6491F /* Makefile */,
-				3AF0F48A1890E06A00B6491F /* Makefile.am */,
-				3AF0F48B1890E06A00B6491F /* Makefile.in */,
 				3AF0F48C1890E06A00B6491F /* mechanism.cpp */,
 				3AF0F48D1890E06A00B6491F /* mechanism.hpp */,
 				3AF0F48E1890E06A00B6491F /* msg.cpp */,
@@ -708,7 +701,6 @@
 				3AF0F4F81890E06B00B6491F /* clock.cpp in Sources */,
 				3AF0F4F71890E06B00B6491F /* address.cpp in Sources */,
 				3AF0F5191890E06B00B6491F /* poll.cpp in Sources */,
-				3AF0F50B1890E06B00B6491F /* Makefile in Sources */,
 				3AF0F5231890E06B00B6491F /* reaper.cpp in Sources */,
 				3AF0F50D1890E06B00B6491F /* msg.cpp in Sources */,
 				3AF0F5031890E06B00B6491F /* io_thread.cpp in Sources */,

@@ -102,7 +102,9 @@ void zmq::pipe_t::set_event_sink (i_pipe_events *sink_)
 
 void zmq::pipe_t::set_identity (const blob_t &identity_)
 {
+#ifndef __clang_analyzer__
     identity = identity_;
+#endif
 }
 
 zmq::blob_t zmq::pipe_t::get_identity ()
