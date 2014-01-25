@@ -1,18 +1,19 @@
 //
-//  caffeine_iosTests.m
-//  caffeine-iosTests
+//  MsgPackTests.m
+//  caffeine-ios
 //
-//  Created by Drew Crawford on 1/22/14.
+//  Created by Drew Crawford on 1/25/14.
 //  Copyright (c) 2014 DrewCrawfordApps. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import "NSObject+MsgPack.h"
 
-@interface caffeine_iosTests : XCTestCase
+@interface MsgPackTests : XCTestCase
 
 @end
 
-@implementation caffeine_iosTests
+@implementation MsgPackTests
 
 - (void)setUp
 {
@@ -26,9 +27,12 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+- (void)testNSNumber {
+    //char
+    NSNumber *char1 = [NSNumber numberWithChar:2];
+    NSMutableData *data = [[NSMutableData alloc] init];
+    [char1 msgPackWithMutableData:data];
+    
 }
 
 @end

@@ -7,13 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A6AA8A11892E86000519A25 /* gcc_atomic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AA8981892E86000519A25 /* gcc_atomic.cpp */; };
-		3A6AA8A21892E86000519A25 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AA89B1892E86000519A25 /* object.cpp */; };
-		3A6AA8A31892E86000519A25 /* objectc.c in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AA89C1892E86000519A25 /* objectc.c */; };
-		3A6AA8A41892E86000519A25 /* unpack.c in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AA89D1892E86000519A25 /* unpack.c */; };
-		3A6AA8A51892E86000519A25 /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AA89E1892E86000519A25 /* version.c */; };
-		3A6AA8A61892E86000519A25 /* vrefbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AA89F1892E86000519A25 /* vrefbuffer.c */; };
-		3A6AA8A71892E86000519A25 /* zone.c in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AA8A01892E86000519A25 /* zone.c */; };
+		3A4222A51893766C001DD698 /* NSObject+MsgPack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4222A41893766C001DD698 /* NSObject+MsgPack.m */; };
+		3A4222EA1893A4E9001DD698 /* MsgPackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4222E91893A4E9001DD698 /* MsgPackTests.m */; };
 		3A6AA8D21892EE1700519A25 /* MsgPack2Objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AA8D11892EE1700519A25 /* MsgPack2Objc.m */; };
 		3AF0F33C1890DEAF00B6491F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF0F33B1890DEAF00B6491F /* Foundation.framework */; };
 		3AF0F3411890DEAF00B6491F /* caffeine_ios.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3AF0F3401890DEAF00B6491F /* caffeine_ios.h */; };
@@ -118,51 +113,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A6AA8981892E86000519A25 /* gcc_atomic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gcc_atomic.cpp; sourceTree = "<group>"; };
-		3A6AA8991892E86000519A25 /* msgpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msgpack.h; sourceTree = "<group>"; };
-		3A6AA89A1892E86000519A25 /* msgpack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = msgpack.hpp; sourceTree = "<group>"; };
-		3A6AA89B1892E86000519A25 /* object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = object.cpp; sourceTree = "<group>"; };
-		3A6AA89C1892E86000519A25 /* objectc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = objectc.c; sourceTree = "<group>"; };
-		3A6AA89D1892E86000519A25 /* unpack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unpack.c; sourceTree = "<group>"; };
-		3A6AA89E1892E86000519A25 /* version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
-		3A6AA89F1892E86000519A25 /* vrefbuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vrefbuffer.c; sourceTree = "<group>"; };
-		3A6AA8A01892E86000519A25 /* zone.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zone.c; sourceTree = "<group>"; };
-		3A6AA8A91892E89000519A25 /* object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
-		3A6AA8AA1892E89000519A25 /* object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = object.hpp; sourceTree = "<group>"; };
-		3A6AA8AB1892E89000519A25 /* pack_define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pack_define.h; sourceTree = "<group>"; };
-		3A6AA8AC1892E89000519A25 /* pack_template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pack_template.h; sourceTree = "<group>"; };
-		3A6AA8AD1892E89000519A25 /* pack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pack.h; sourceTree = "<group>"; };
-		3A6AA8AE1892E89000519A25 /* pack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pack.hpp; sourceTree = "<group>"; };
-		3A6AA8AF1892E89000519A25 /* sbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sbuffer.h; sourceTree = "<group>"; };
-		3A6AA8B01892E89000519A25 /* sbuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sbuffer.hpp; sourceTree = "<group>"; };
-		3A6AA8B11892E89000519A25 /* sysdep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sysdep.h; sourceTree = "<group>"; };
-		3A6AA8B21892E89900519A25 /* type.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = type.hpp; sourceTree = "<group>"; };
-		3A6AA8B31892E89900519A25 /* unpack_define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unpack_define.h; sourceTree = "<group>"; };
-		3A6AA8B41892E89900519A25 /* unpack_template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unpack_template.h; sourceTree = "<group>"; };
-		3A6AA8B51892E89900519A25 /* unpack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unpack.h; sourceTree = "<group>"; };
-		3A6AA8B61892E89900519A25 /* unpack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = unpack.hpp; sourceTree = "<group>"; };
-		3A6AA8B71892E89900519A25 /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
-		3A6AA8B81892E8A000519A25 /* vrefbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vrefbuffer.h; sourceTree = "<group>"; };
-		3A6AA8B91892E8A000519A25 /* vrefbuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = vrefbuffer.hpp; sourceTree = "<group>"; };
-		3A6AA8BA1892E8A000519A25 /* zbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zbuffer.h; sourceTree = "<group>"; };
-		3A6AA8BB1892E8A000519A25 /* zbuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = zbuffer.hpp; sourceTree = "<group>"; };
-		3A6AA8BC1892E8A000519A25 /* zone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zone.h; sourceTree = "<group>"; };
-		3A6AA8BD1892E8A000519A25 /* zone.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = zone.hpp; sourceTree = "<group>"; };
-		3A6AA8BF1892E92B00519A25 /* bool.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = bool.hpp; sourceTree = "<group>"; };
-		3A6AA8C01892E92B00519A25 /* define.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = define.hpp; sourceTree = "<group>"; };
-		3A6AA8C11892E93200519A25 /* deque.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = deque.hpp; sourceTree = "<group>"; };
-		3A6AA8C21892E93200519A25 /* fixint.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = fixint.hpp; sourceTree = "<group>"; };
-		3A6AA8C31892E93200519A25 /* float.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = float.hpp; sourceTree = "<group>"; };
-		3A6AA8C41892E93200519A25 /* int.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = int.hpp; sourceTree = "<group>"; };
-		3A6AA8C51892E93200519A25 /* list.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = list.hpp; sourceTree = "<group>"; };
-		3A6AA8C61892E93200519A25 /* map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = map.hpp; sourceTree = "<group>"; };
-		3A6AA8C71892E93200519A25 /* nil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = nil.hpp; sourceTree = "<group>"; };
-		3A6AA8C81892E93200519A25 /* pair.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pair.hpp; sourceTree = "<group>"; };
-		3A6AA8C91892E93200519A25 /* raw.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = raw.hpp; sourceTree = "<group>"; };
-		3A6AA8CA1892E93200519A25 /* set.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = set.hpp; sourceTree = "<group>"; };
-		3A6AA8CB1892E93200519A25 /* string.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = string.hpp; sourceTree = "<group>"; };
-		3A6AA8CC1892E93900519A25 /* tuple.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = tuple.hpp; sourceTree = "<group>"; };
-		3A6AA8CD1892E93900519A25 /* vector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = vector.hpp; sourceTree = "<group>"; };
+		3A4222A31893766C001DD698 /* NSObject+MsgPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MsgPack.h"; sourceTree = "<group>"; };
+		3A4222A41893766C001DD698 /* NSObject+MsgPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MsgPack.m"; sourceTree = "<group>"; };
+		3A4222E91893A4E9001DD698 /* MsgPackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgPackTests.m; sourceTree = "<group>"; };
 		3A6AA8CF1892ED9F00519A25 /* MsgPackable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgPackable.h; sourceTree = "<group>"; };
 		3A6AA8D01892EE1700519A25 /* MsgPack2Objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgPack2Objc.h; sourceTree = "<group>"; };
 		3A6AA8D11892EE1700519A25 /* MsgPack2Objc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgPack2Objc.m; sourceTree = "<group>"; };
@@ -368,88 +321,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A6AA8961892E76900519A25 /* msgpack */ = {
-			isa = PBXGroup;
-			children = (
-				3A6AA8971892E83300519A25 /* src */,
-			);
-			path = msgpack;
-			sourceTree = "<group>";
-		};
-		3A6AA8971892E83300519A25 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				3A6AA8A81892E86A00519A25 /* msgpack */,
-				3A6AA8981892E86000519A25 /* gcc_atomic.cpp */,
-				3A6AA8991892E86000519A25 /* msgpack.h */,
-				3A6AA89A1892E86000519A25 /* msgpack.hpp */,
-				3A6AA89B1892E86000519A25 /* object.cpp */,
-				3A6AA89C1892E86000519A25 /* objectc.c */,
-				3A6AA89D1892E86000519A25 /* unpack.c */,
-				3A6AA89E1892E86000519A25 /* version.c */,
-				3A6AA89F1892E86000519A25 /* vrefbuffer.c */,
-				3A6AA8A01892E86000519A25 /* zone.c */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		3A6AA8A81892E86A00519A25 /* msgpack */ = {
-			isa = PBXGroup;
-			children = (
-				3A6AA8BE1892E91800519A25 /* type */,
-				3A6AA8B81892E8A000519A25 /* vrefbuffer.h */,
-				3A6AA8B91892E8A000519A25 /* vrefbuffer.hpp */,
-				3A6AA8BA1892E8A000519A25 /* zbuffer.h */,
-				3A6AA8BB1892E8A000519A25 /* zbuffer.hpp */,
-				3A6AA8BC1892E8A000519A25 /* zone.h */,
-				3A6AA8BD1892E8A000519A25 /* zone.hpp */,
-				3A6AA8B21892E89900519A25 /* type.hpp */,
-				3A6AA8B31892E89900519A25 /* unpack_define.h */,
-				3A6AA8B41892E89900519A25 /* unpack_template.h */,
-				3A6AA8B51892E89900519A25 /* unpack.h */,
-				3A6AA8B61892E89900519A25 /* unpack.hpp */,
-				3A6AA8B71892E89900519A25 /* version.h */,
-				3A6AA8A91892E89000519A25 /* object.h */,
-				3A6AA8AA1892E89000519A25 /* object.hpp */,
-				3A6AA8AB1892E89000519A25 /* pack_define.h */,
-				3A6AA8AC1892E89000519A25 /* pack_template.h */,
-				3A6AA8AD1892E89000519A25 /* pack.h */,
-				3A6AA8AE1892E89000519A25 /* pack.hpp */,
-				3A6AA8AF1892E89000519A25 /* sbuffer.h */,
-				3A6AA8B01892E89000519A25 /* sbuffer.hpp */,
-				3A6AA8B11892E89000519A25 /* sysdep.h */,
-			);
-			path = msgpack;
-			sourceTree = "<group>";
-		};
-		3A6AA8BE1892E91800519A25 /* type */ = {
-			isa = PBXGroup;
-			children = (
-				3A6AA8CC1892E93900519A25 /* tuple.hpp */,
-				3A6AA8CD1892E93900519A25 /* vector.hpp */,
-				3A6AA8C11892E93200519A25 /* deque.hpp */,
-				3A6AA8C21892E93200519A25 /* fixint.hpp */,
-				3A6AA8C31892E93200519A25 /* float.hpp */,
-				3A6AA8C41892E93200519A25 /* int.hpp */,
-				3A6AA8C51892E93200519A25 /* list.hpp */,
-				3A6AA8C61892E93200519A25 /* map.hpp */,
-				3A6AA8C71892E93200519A25 /* nil.hpp */,
-				3A6AA8C81892E93200519A25 /* pair.hpp */,
-				3A6AA8C91892E93200519A25 /* raw.hpp */,
-				3A6AA8CA1892E93200519A25 /* set.hpp */,
-				3A6AA8CB1892E93200519A25 /* string.hpp */,
-				3A6AA8BF1892E92B00519A25 /* bool.hpp */,
-				3A6AA8C01892E92B00519A25 /* define.hpp */,
-			);
-			path = type;
-			sourceTree = "<group>";
-		};
 		3A6AA8CE1892ED3A00519A25 /* msgpack2-objc */ = {
 			isa = PBXGroup;
 			children = (
 				3A6AA8CF1892ED9F00519A25 /* MsgPackable.h */,
 				3A6AA8D01892EE1700519A25 /* MsgPack2Objc.h */,
 				3A6AA8D11892EE1700519A25 /* MsgPack2Objc.m */,
+				3A4222A31893766C001DD698 /* NSObject+MsgPack.h */,
+				3A4222A41893766C001DD698 /* NSObject+MsgPack.m */,
 			);
 			path = "msgpack2-objc";
 			sourceTree = "<group>";
@@ -507,6 +386,7 @@
 			children = (
 				3AF0F3571890DEAF00B6491F /* caffeine_iosTests.m */,
 				3AF0F3521890DEAF00B6491F /* Supporting Files */,
+				3A4222E91893A4E9001DD698 /* MsgPackTests.m */,
 			);
 			path = "caffeine-iosTests";
 			sourceTree = "<group>";
@@ -533,7 +413,6 @@
 			isa = PBXGroup;
 			children = (
 				3A6AA8CE1892ED3A00519A25 /* msgpack2-objc */,
-				3A6AA8961892E76900519A25 /* msgpack */,
 				3AF0F3611890DF7E00B6491F /* zeromq */,
 			);
 			path = ext;
@@ -809,6 +688,7 @@
 				3AF0F5331890E06B00B6491F /* trie.cpp in Sources */,
 				3AF0F5051890E06B00B6491F /* ipc_address.cpp in Sources */,
 				3AF0F51F1890E06B00B6491F /* push.cpp in Sources */,
+				3A4222A51893766C001DD698 /* NSObject+MsgPack.m in Sources */,
 				3AF0F52F1890E06B00B6491F /* tcp_connecter.cpp in Sources */,
 				3AF0F5021890E06B00B6491F /* io_object.cpp in Sources */,
 				3AF0F5001890E06B00B6491F /* err.cpp in Sources */,
@@ -821,12 +701,10 @@
 				3AF0F50E1890E06B00B6491F /* mtrie.cpp in Sources */,
 				3AF0F51B1890E06B00B6491F /* precompiled.cpp in Sources */,
 				3AF0F4FC1890E06B00B6491F /* dealer.cpp in Sources */,
-				3A6AA8A21892E86000519A25 /* object.cpp in Sources */,
 				3AF0F4FE1890E06B00B6491F /* dist.cpp in Sources */,
 				3A6AA8D21892EE1700519A25 /* MsgPack2Objc.m in Sources */,
 				3AF0F5291890E06B00B6491F /* signaler.cpp in Sources */,
 				3AF0F51E1890E06B00B6491F /* pull.cpp in Sources */,
-				3A6AA8A11892E86000519A25 /* gcc_atomic.cpp in Sources */,
 				3AF0F5381890E06B00B6491F /* xpub.cpp in Sources */,
 				3AF0F51D1890E06B00B6491F /* pub.cpp in Sources */,
 				3AF0F5341890E06B00B6491F /* v1_decoder.cpp in Sources */,
@@ -835,7 +713,6 @@
 				3AF0F51A1890E06B00B6491F /* poller_base.cpp in Sources */,
 				3AF0F5221890E06B00B6491F /* raw_encoder.cpp in Sources */,
 				3AF0F52E1890E06B00B6491F /* tcp_address.cpp in Sources */,
-				3A6AA8A51892E86000519A25 /* version.c in Sources */,
 				3AF0F51C1890E06B00B6491F /* proxy.cpp in Sources */,
 				3AF0F5391890E06B00B6491F /* xsub.cpp in Sources */,
 				3AF0F52B1890E06B00B6491F /* stream_engine.cpp in Sources */,
@@ -850,12 +727,10 @@
 				3AF0F4F71890E06B00B6491F /* address.cpp in Sources */,
 				3AF0F5191890E06B00B6491F /* poll.cpp in Sources */,
 				3AF0F5231890E06B00B6491F /* reaper.cpp in Sources */,
-				3A6AA8A61892E86000519A25 /* vrefbuffer.c in Sources */,
 				3AF0F50D1890E06B00B6491F /* msg.cpp in Sources */,
 				3AF0F5031890E06B00B6491F /* io_thread.cpp in Sources */,
 				3AF0F5101890E06B00B6491F /* object.cpp in Sources */,
 				3AF0F52A1890E06B00B6491F /* socket_base.cpp in Sources */,
-				3A6AA8A31892E86000519A25 /* objectc.c in Sources */,
 				3AF0F4FF1890E06B00B6491F /* epoll.cpp in Sources */,
 				3AF0F5241890E06B00B6491F /* rep.cpp in Sources */,
 				3AF0F5121890E06B00B6491F /* own.cpp in Sources */,
@@ -864,14 +739,12 @@
 				3AF0F5211890E06B00B6491F /* raw_decoder.cpp in Sources */,
 				3AF0F5161890E06B00B6491F /* pgm_socket.cpp in Sources */,
 				3AF0F5371890E06B00B6491F /* v2_encoder.cpp in Sources */,
-				3A6AA8A71892E86000519A25 /* zone.c in Sources */,
 				3AF0F5361890E06B00B6491F /* v2_decoder.cpp in Sources */,
 				3AF0F3431890DEAF00B6491F /* caffeine_ios.m in Sources */,
 				3AF0F5311890E06B00B6491F /* tcp.cpp in Sources */,
 				3AF0F50A1890E06B00B6491F /* mailbox.cpp in Sources */,
 				3AF0F50C1890E06B00B6491F /* mechanism.cpp in Sources */,
 				3AF0F4FB1890E06B00B6491F /* curve_server.cpp in Sources */,
-				3A6AA8A41892E86000519A25 /* unpack.c in Sources */,
 				3AF0F5261890E06B00B6491F /* router.cpp in Sources */,
 				3AF0F4F91890E06B00B6491F /* ctx.cpp in Sources */,
 				3AF0F5081890E06B00B6491F /* kqueue.cpp in Sources */,
@@ -884,6 +757,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4222EA1893A4E9001DD698 /* MsgPackTests.m in Sources */,
 				3AF0F3581890DEAF00B6491F /* caffeine_iosTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1008,6 +882,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/libcaffeine-ios.a";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1020,7 +895,14 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "caffeine-iosTests/caffeine-iosTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = $BUNDLE_LOADER;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -1029,6 +911,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/libcaffeine-ios.a";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1037,7 +920,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "caffeine-ios/caffeine-ios-Prefix.pch";
 				INFOPLIST_FILE = "caffeine-iosTests/caffeine-iosTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = $BUNDLE_LOADER;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
