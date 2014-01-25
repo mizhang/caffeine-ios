@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "NSObject+MsgPack.h"
+#import "MsgPack2Objc.h"
 
 @interface MsgPackTests : XCTestCase
 
@@ -28,10 +29,37 @@
 }
 
 - (void)testNSNumber {
-    //char
-    NSNumber *char1 = [NSNumber numberWithChar:2];
-    NSMutableData *data = [[NSMutableData alloc] init];
-    [char1 msgPackWithMutableData:data];
+    
+#define TEST(input,knownOutput)\
+data = [[NSMutableData alloc] init];\
+knownOutputData = [NSData dataWithBytes:(unsigned char[])knownOutput length:sizeof((unsigned char[]) knownOutput)];\
+[input msgPackWithMutableData:data];\
+XCTAssertEqualObjects(data,knownOutputData,@"Serialization error");\
+bytesRead = 0;\
+reserialized = [NSNumber unMsgPackFromData:data bytesRead:&bytesRead];\
+XCTAssertEqualObjects(input,reserialized)
+
+    
+    
+    //fixint
+    NSNumber *test = [NSNumber numberWithChar:2];
+    NSMutableData *data = nil;
+    NSNumber *reserialized = nil;
+    NSData *knownOutputData = nil;
+    int bytesRead = 0;
+    
+
+    TEST(test, {0x02});
+    
+    //fixint negative
+    test = [NSNumber numberWithChar:-2];
+    TEST(test,{0xfe});
+    
+    
+    test = [NSNumber numberWithBool:YES];
+    data = [NSMutableData data];
+    
+    
     
 }
 

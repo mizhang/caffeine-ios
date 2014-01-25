@@ -247,14 +247,14 @@ int pack_slonglong(NSMutableData *data, signed long long value) {
     unsigned char *bytes = (unsigned char*) data.bytes;
     unsigned char header = bytes[0];
     if (header >= MSGPACK_TYPE_POSITIVE_FIXINT_START && header <= MSGPACK_TYPE_POSITIVE_FIXINT_END) {
-        uint8_t fixint = bytes[1];
+        uint8_t fixint = bytes[0];
         *bytePtr += 1;
         return [NSNumber numberWithUnsignedInt:fixint];
     }
     else if (header >= MSGPACK_TYPE_NEGATIVE_FIXINT_START && header <= MSGPACK_TYPE_NEGATIVE_FIXINT_END) {
-        uint8_t fixint = bytes[1] & 0b00011111;
+        int8_t fixint = bytes[0];
         *bytePtr += 1;
-        return [NSNumber numberWithInt:-1 * fixint];
+        return [NSNumber numberWithInt:fixint];
     }
     else if (header==MSGPACK_TYPE_UINT8) {
         uint8_t fixint = bytes[1];
