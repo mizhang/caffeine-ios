@@ -435,7 +435,7 @@ int pack_slonglong(NSMutableData *data, signed long long value) {
     else if (self.count <= 65535) {
         unsigned char buf[3] = {MSGPACK_TYPE_ARR16};
         _msgpack_store16(&buf[1], self.count);
-        [data appendBytes:&buf length:2];
+        [data appendBytes:&buf length:3];
     }
     else {
         unsigned char buf[5] = {MSGPACK_TYPE_ARR32};
@@ -453,7 +453,7 @@ int pack_slonglong(NSMutableData *data, signed long long value) {
     unsigned long length = -1;
     unsigned long extraBytes = -1;
     if (header >= MSGPACK_TYPE_FIXARRAY_START && header <= MSGPACK_TYPE_FIXARRAY_END) {
-        length = 0b00001111 & bytes[1];
+        length = 0b00001111 & bytes[0];
         extraBytes = 1;
     }
     else if (header==MSGPACK_TYPE_ARR16) {

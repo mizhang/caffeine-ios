@@ -37,7 +37,46 @@
     return testData;
 }
 
+-(void) testArray {
+#define TEST(input,knownOutput)\
+data = [[NSMutableData alloc] init];\
+knownOutputData = [NSData dataWithBytes:knownOutput length:sizeof(knownOutput)];\
+[input msgPackWithMutableData:data];\
+XCTAssertEqualObjects(data,knownOutputData,@"Serialization error");\
+bytesRead = 0;\
+reserialized = [NSArray unMsgPackFromData:data bytesRead:&bytesRead];\
+XCTAssertEqualObjects(input,reserialized)
+
+    NSMutableData *data = nil;
+    NSArray *reserialized = nil;
+    NSData *knownOutputData = nil;
+    int bytesRead = 0;
+    
+    //fixarray
+    NSArray *input = @[@1,@2];
+    char buf[] = {0x92,0x01,0x02};
+    TEST(input, buf);
+    
+    //array16
+    input = @[@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16];
+    char buf1[] = {0xdc, 0x00, 0x10, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c ,0x0d, 0x0e, 0x0f, 0x10};
+    TEST(input, buf1);
+    
+    //array32
+    NSMutableArray *in1 = [[NSMutableArray alloc] initWithCapacity:65536];
+    for (int i = 0; i < 65536; i++) {
+        [in1 addObject:@YES];
+    }
+    data = [[NSMutableData alloc] init];
+    [in1 msgPackWithMutableData:data];
+    bytesRead = 0;
+    reserialized = [NSArray unMsgPackFromData:data bytesRead:&bytesRead];
+    XCTAssertEqualObjects(in1,reserialized);
+    
+}
+
 -(void) testString {
+#undef TEST
 #define TEST(input,knownOutput)\
 data = [[NSMutableData alloc] init];\
 knownOutputData = [NSData dataWithBytes:knownOutput length:sizeof(knownOutput)];\
@@ -79,7 +118,6 @@ XCTAssertEqualObjects(input,reserialized)
     TEST(buildAString, 0xda);
     
     //str32
-    
     while(buildAString.length < 65536) {
         [buildAString appendString:buildAString];
     }
