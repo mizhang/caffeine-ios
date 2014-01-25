@@ -32,7 +32,7 @@
     
 #define TEST(input,knownOutput)\
 data = [[NSMutableData alloc] init];\
-knownOutputData = [NSData dataWithBytes:(unsigned char[])knownOutput length:sizeof((unsigned char[]) knownOutput)];\
+knownOutputData = [NSData dataWithBytes:knownOutput length:sizeof(knownOutput)];\
 [input msgPackWithMutableData:data];\
 XCTAssertEqualObjects(data,knownOutputData,@"Serialization error");\
 bytesRead = 0;\
@@ -47,17 +47,21 @@ XCTAssertEqualObjects(input,reserialized)
     NSData *knownOutputData = nil;
     int bytesRead = 0;
     
+    unsigned char buf[] = {0x02};
     //fixint
-    TEST(test, {0x02});
+    TEST(test, buf);
     
     //fixint negative
     test = [NSNumber numberWithChar:-2];
-    TEST(test,{0xfe});
+    unsigned char buf2[] = {0xfe};
+    TEST(test,buf2);
     
     //bool
     //be advised, ObjC pretty much treats BOOL as 0,1.  So if you were expecting MsgPack's actual bool (c3), be prepared to be surprised.
-    TEST([NSNumber numberWithBool:YES],{0x01});
-    TEST(@NO,{0x00});
+    unsigned char buf4[] = {0x01};
+    TEST([NSNumber numberWithBool:YES],buf4);
+    unsigned char buf3[] = {0x00};
+    TEST(@NO,buf3);
     
     //however, it's easy to verify that the reverse works as expected
     NSData *oobdata = [NSData dataWithBytes:(unsigned char[]){0xc3} length:1];
@@ -68,6 +72,17 @@ XCTAssertEqualObjects(input,reserialized)
     bytesRead = 0;
     NSNumber *no = [NSNumber unMsgPackFromData:oobdata bytesRead:&bytesRead];
     XCTAssertFalse(no.boolValue, @"Not no?");
+    
+    //float
+    NSNumber *f = [NSNumber numberWithFloat:3.5];
+    unsigned char buf5[] = {0xca,0x40,0x60,0x00,0x00};
+    TEST(f, buf5);
+    
+    //double
+    f = [NSNumber numberWithDouble:3.5];
+    unsigned char buf6[] = {0xcb, 0x40 ,0x0c ,00 ,00 ,00 ,00 ,00 ,00};
+    TEST(f, buf6);
+    
     
     
     
