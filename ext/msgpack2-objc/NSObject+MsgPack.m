@@ -289,12 +289,12 @@ int pack_slonglong(NSMutableData *data, signed long long value) {
     else if (header==MSGPACK_TYPE_INT32) {
         int32_t fixint = _msgpack_load32(int32_t, &bytes[1]);
         *bytePtr += 5;
-        return [NSNumber numberWithUnsignedLong:fixint];
+        return [NSNumber numberWithLong:fixint];
     }
     else if (header==MSGPACK_TYPE_INT64) {
         int64_t fixint = _msgpack_load64(int64_t, &bytes[1]);
         *bytePtr += 9;
-        return [NSNumber numberWithUnsignedLongLong:fixint];
+        return [NSNumber numberWithLongLong:fixint];
     }
     else if (header==MSGPACK_TYPE_FLOAT32) {
         

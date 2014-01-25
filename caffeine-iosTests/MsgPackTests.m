@@ -101,6 +101,25 @@ XCTAssertEqualObjects(input,reserialized)
     unsigned char buf10[] = {0xcf,00, 00, 00, 0x1c, 0xbe, 0x99, 0x1a,0x14};
     TEST(u, buf10);
     
+    //int types
+    //int8
+    NSNumber *i = [NSNumber numberWithInt:-100];
+    unsigned char buf11[] = {0xd0,0x9c};
+    TEST(i, buf11);
+    //int16
+    i = [NSNumber numberWithInt:-200];
+    unsigned char buf12[] = {0xd1,0xff,0x38};
+    TEST(i, buf12);
+    //int32
+    i = [NSNumber numberWithInt:-50000];
+    unsigned char buf13[] = {0xd2, 0xff, 0xff, 0x3c, 0xb0};
+    TEST(i, buf13);
+    //int64
+    i = [NSNumber numberWithLongLong:-5000000000];
+    unsigned char buf14[] = {0xd3, 0xff, 0xff, 0xff, 0xfe, 0xd5, 0xfa, 0x0e, 00};
+    TEST(i, buf14);
+    
+    
     
     
     
