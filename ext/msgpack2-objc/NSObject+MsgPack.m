@@ -420,7 +420,7 @@ int pack_slonglong(NSMutableData *data, signed long long value) {
         extraBytes = 5;
     }
     *bytePtr += extraBytes + length;
-    return [[NSData alloc] initWithBytes:&data.bytes[extraBytes-1] length:length];
+    return [[NSData alloc] initWithBytes:&data.bytes[extraBytes] length:length];
 }
 
 @end

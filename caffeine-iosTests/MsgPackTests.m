@@ -28,8 +28,38 @@
     [super tearDown];
 }
 
-- (void)testNSNumber {
+-(NSData*) testDataOfLength:(uint32_t) length {
+    char *bytes = calloc(length, 1);
+    bytes[0] = 0x99;
+    bytes[length - 1] = 0x99;
+    NSData *testData = [NSData dataWithBytes:bytes length:length];
+    free(bytes);
+    return testData;
+}
+
+-(void) testData {
+#define TEST(input,knownOutput)\
+data = [[NSMutableData alloc] init];\
+knownOutputData = [NSData dataWithBytes:knownOutput length:sizeof(knownOutput)];\
+[input msgPackWithMutableData:data];\
+XCTAssertEqualObjects(data,knownOutputData,@"Serialization error");\
+bytesRead = 0;\
+reserialized = [NSData unMsgPackFromData:data bytesRead:&bytesRead];\
+XCTAssertEqualObjects(input,reserialized)
     
+    NSMutableData *data = nil;
+    NSData *reserialized = nil;
+    NSData *knownOutputData = nil;
+    int bytesRead = 0;
+    
+    NSData *input = [self testDataOfLength:3];
+    unsigned char buf[] = {0xc4,0x03,0x99,0x00,0x99};
+    TEST(input, buf);
+    
+}
+
+- (void)testNSNumber {
+#undef TEST
 #define TEST(input,knownOutput)\
 data = [[NSMutableData alloc] init];\
 knownOutputData = [NSData dataWithBytes:knownOutput length:sizeof(knownOutput)];\
@@ -38,9 +68,6 @@ XCTAssertEqualObjects(data,knownOutputData,@"Serialization error");\
 bytesRead = 0;\
 reserialized = [NSNumber unMsgPackFromData:data bytesRead:&bytesRead];\
 XCTAssertEqualObjects(input,reserialized)
-
-    
-    
     NSNumber *test = [NSNumber numberWithChar:2];
     NSMutableData *data = nil;
     NSNumber *reserialized = nil;
@@ -118,10 +145,6 @@ XCTAssertEqualObjects(input,reserialized)
     i = [NSNumber numberWithLongLong:-5000000000];
     unsigned char buf14[] = {0xd3, 0xff, 0xff, 0xff, 0xfe, 0xd5, 0xfa, 0x0e, 00};
     TEST(i, buf14);
-    
-    
-    
-    
     
 }
 
