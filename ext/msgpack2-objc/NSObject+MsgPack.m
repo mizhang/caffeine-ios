@@ -416,7 +416,7 @@ int pack_slonglong(NSMutableData *data, signed long long value) {
         extraBytes = 3;
     }
     else if (header==MSGPACK_TYPE_BIN32) {
-        length = _msgpack_load64(uint32_t, &bytes[1]);
+        length = _msgpack_load32(uint32_t, &bytes[1]);
         extraBytes = 5;
     }
     *bytePtr += extraBytes + length;

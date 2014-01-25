@@ -56,6 +56,40 @@ XCTAssertEqualObjects(input,reserialized)
     unsigned char buf[] = {0xc4,0x03,0x99,0x00,0x99};
     TEST(input, buf);
     
+    input = [self testDataOfLength:65530];
+    data = [[NSMutableData alloc] init];
+    [input msgPackWithMutableData:data];
+    char *bytes = (char*) data.bytes;
+    XCTAssertEqual(bytes[0], (char) 0xc5, @"bin16");
+    XCTAssertEqual(bytes[1], (char) 0xff, @"bin16"); //65530
+    XCTAssertEqual(bytes[2], (char) 0xfa, @"bin16"); //
+    XCTAssertEqual(bytes[3], (char) 0x99, @"bin16"); //data
+    XCTAssertEqual(bytes[4], (char) 0x00, @"bin16"); //data
+    XCTAssertEqual(bytes[65528+3], (char) 0x00, @"bin16"); //data
+    XCTAssertEqual(bytes[65529+3], (char) 0x99, @"bin16"); //data
+    bytesRead = 0;
+    reserialized = [NSData unMsgPackFromData:data bytesRead:&bytesRead];
+    XCTAssertEqualObjects(input, reserialized, @"deserialization issue");
+    
+    
+
+    input = [self testDataOfLength:65536];
+    data = [[NSMutableData alloc] init];
+    [input msgPackWithMutableData:data];
+    bytes = (char*) data.bytes;
+    XCTAssertEqual(bytes[0], (char) 0xc6, @"bin32");
+    XCTAssertEqual(bytes[1], (char) 0x00, @"bin32"); //65536
+    XCTAssertEqual(bytes[2], (char) 0x01, @"bin32"); //
+    XCTAssertEqual(bytes[3], (char) 0x00, @"bin32"); //
+    XCTAssertEqual(bytes[4], (char) 0x00, @"bin32"); //
+    XCTAssertEqual(bytes[5], (char) 0x99, @"bin32"); //data
+    XCTAssertEqual(bytes[6], (char) 0x00, @"bin32"); //data
+    XCTAssertEqual(bytes[65534+5], (char) 0x00, @"bin32"); //data
+    XCTAssertEqual(bytes[65535+5], (char) 0x99, @"bin32"); //data
+    bytesRead = 0;
+    reserialized = [NSData unMsgPackFromData:data bytesRead:&bytesRead];
+    XCTAssertEqualObjects(input, reserialized, @"deserialization issue");
+    
 }
 
 - (void)testNSNumber {
