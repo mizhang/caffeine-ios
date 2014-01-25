@@ -37,7 +37,51 @@
     return testData;
 }
 
+-(void) testMap {
+#define TEST(input,knownOutput)\
+data = [[NSMutableData alloc] init];\
+knownOutputData = [NSData dataWithBytes:knownOutput length:sizeof(knownOutput)];\
+[input msgPackWithMutableData:data];\
+XCTAssertEqualObjects(data,knownOutputData,@"Serialization error");\
+bytesRead = 0;\
+reserialized = [NSDictionary unMsgPackFromData:data bytesRead:&bytesRead];\
+XCTAssertEqualObjects(input,reserialized)
+    
+    NSMutableData *data = nil;
+    NSDictionary *reserialized = nil;
+    NSData *knownOutputData = nil;
+    int bytesRead = 0;
+    
+    NSDictionary *input = @{@"k":@"v"};
+    char buf[] = {0x81, 0xa1, 0x6b, 0xa1, 0x76};
+    TEST(input, buf);
+    
+#undef TEST
+#define TEST(input,firstByte)\
+data = [[NSMutableData alloc] init];\
+[input msgPackWithMutableData:data];\
+XCTAssertEqual(((char*)data.bytes)[0],(char)firstByte,@"Serialization error");\
+bytesRead = 0;\
+reserialized = [NSDictionary unMsgPackFromData:data bytesRead:&bytesRead];\
+XCTAssertEqualObjects(input,reserialized)
+    
+    input = @{@"k":@"v",@"a":@"v",@"b":@"v",@"c":@"v",@"d":@"v",@"e":@"v",@"f":@"f",@"g":@"g",@"h":@"h",@"I":@"I",@"j":@"j",@"k":@"k",@"l":@"L",@"m":@"M",@"n":@"N",@"O":@"O",@"p":@"P"};
+    
+    TEST(input, 0xde);
+    
+    //array32
+    NSMutableDictionary *dict32 = [[NSMutableDictionary alloc] init];
+    for(int i = 0; i < 65536; i++) {
+        dict32[@(i)]=@YES;
+    }
+    TEST(dict32, 0xdf);
+    
+    
+    
+}
+
 -(void) testArray {
+#undef TEST
 #define TEST(input,knownOutput)\
 data = [[NSMutableData alloc] init];\
 knownOutputData = [NSData dataWithBytes:knownOutput length:sizeof(knownOutput)];\

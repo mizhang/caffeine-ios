@@ -491,7 +491,7 @@ int pack_slonglong(NSMutableData *data, signed long long value) {
     else if (self.count <= 65535) {
         unsigned char buf[3] = {MSGPACK_TYPE_MAP16};
         _msgpack_store16(&buf[1], self.count);
-        [data appendBytes:&buf length:2];
+        [data appendBytes:&buf length:3];
     }
     else {
         unsigned char buf[5] = {MSGPACK_TYPE_MAP32};
@@ -553,14 +553,14 @@ int pack_slonglong(NSMutableData *data, signed long long value) {
     if (header>=MSGPACK_TYPE_POSITIVE_FIXINT_START && header <= MSGPACK_TYPE_POSITIVE_FIXINT_END) {
         return [NSNumber unMsgPackFromData:data bytesRead:bytePtr];
     }
-    else if (header >= MSGPACK_TYPE_FIXMAP_START && header <= MSGPACK_TYPE_FIXSTR_END) {
+    else if (header >= MSGPACK_TYPE_FIXMAP_START && header <= MSGPACK_TYPE_FIXMAP_END) {
         return [NSDictionary unMsgPackFromData:data bytesRead:bytePtr];
     }
     else if (header >= MSGPACK_TYPE_FIXARRAY_START && header <= MSGPACK_TYPE_FIXARRAY_END) {
         return [NSArray unMsgPackFromData:data bytesRead:bytePtr];
     }
     else if (header >= MSGPACK_TYPE_FIXSTR_START && header <= MSGPACK_TYPE_FIXSTR_END) {
-        return [NSArray unMsgPackFromData:data bytesRead:bytePtr];
+        return [NSString unMsgPackFromData:data bytesRead:bytePtr];
     }
     else if (header >= MSGPACK_TYPE_NEGATIVE_FIXINT_START && header <= MSGPACK_TYPE_NEGATIVE_FIXINT_END) {
         return [NSNumber unMsgPackFromData:data bytesRead:bytePtr];
