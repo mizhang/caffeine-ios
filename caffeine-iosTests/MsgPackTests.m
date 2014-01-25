@@ -37,7 +37,61 @@
     return testData;
 }
 
+-(void) testString {
+#define TEST(input,knownOutput)\
+data = [[NSMutableData alloc] init];\
+knownOutputData = [NSData dataWithBytes:knownOutput length:sizeof(knownOutput)];\
+[input msgPackWithMutableData:data];\
+XCTAssertEqualObjects(data,knownOutputData,@"Serialization error");\
+bytesRead = 0;\
+reserialized = [NSString unMsgPackFromData:data bytesRead:&bytesRead];\
+XCTAssertEqualObjects(input,reserialized)
+    
+    NSMutableData *data = nil;
+    NSString *reserialized = nil;
+    NSData *knownOutputData = nil;
+    int bytesRead = 0;
+    
+    //fixstr
+    NSString *input = @"test";
+    unsigned char buf[] = {0xa4,0x74,0x65,0x73,0x74};
+    TEST(input, buf);
+    
+    //str8
+    input = @"testABCDEFGHIJKLAJWOERIQUAJFLWOF";
+    unsigned char buf1[] = {0xd9,0x20,0x74,0x65,0x73,0x74,0x41,0x42, 0x43, 0x44, 0x45, 0x46, 0x47, 0x48, 0x49, 0x4a, 0x4b, 0x4c, 0x41, 0x4a, 0x57, 0x4f, 0x45, 0x52, 0x49, 0x51, 0x55, 0x41, 0x4a, 0x46, 0x4c, 0x57, 0x4f, 0x46};
+    TEST(input, buf1);
+
+//too big to construct the output so we just verify the first byte
+#undef TEST
+#define TEST(input,firstByte)\
+data = [[NSMutableData alloc] init];\
+[input msgPackWithMutableData:data];\
+XCTAssertEqual(((char*)data.bytes)[0],(char)firstByte,@"Not expected header.");\
+bytesRead = 0;\
+reserialized = [NSString unMsgPackFromData:data bytesRead:&bytesRead];\
+XCTAssertEqualObjects(input,reserialized)
+    //str16
+    NSMutableString *buildAString = [[NSMutableString alloc] init];
+    while (buildAString.length < 400) {
+        [buildAString appendString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+    }
+    TEST(buildAString, 0xda);
+    
+    //str32
+    
+    while(buildAString.length < 65536) {
+        [buildAString appendString:buildAString];
+    }
+    TEST(buildAString, 0xdb);
+    
+
+    
+    
+}
+
 -(void) testData {
+#undef TEST
 #define TEST(input,knownOutput)\
 data = [[NSMutableData alloc] init];\
 knownOutputData = [NSData dataWithBytes:knownOutput length:sizeof(knownOutput)];\

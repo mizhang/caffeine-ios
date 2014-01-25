@@ -355,7 +355,7 @@ int pack_slonglong(NSMutableData *data, signed long long value) {
     unsigned char header = bytes[0];
     NSData *utfData = nil;
     if (header >= MSGPACK_TYPE_FIXSTR_START && header <= MSGPACK_TYPE_FIXSTR_END) {
-        int length = 0b00011111 & bytes[1];
+        int length = 0b00011111 & bytes[0];
         *bytePtr += length + 1;
         utfData = [[NSData alloc] initWithBytes:&bytes[1] length:length];
     }
@@ -372,7 +372,7 @@ int pack_slonglong(NSMutableData *data, signed long long value) {
     else if (header==MSGPACK_TYPE_STR32) {
         uint32_t length = _msgpack_load32(uint32_t, &bytes[1]);
         *bytePtr += length + 5;
-        utfData = [[NSData alloc] initWithBytes:&bytes[1] length:length];
+        utfData = [[NSData alloc] initWithBytes:&bytes[5] length:length];
     }
     else {
         abort();
