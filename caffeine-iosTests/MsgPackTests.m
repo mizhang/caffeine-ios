@@ -70,11 +70,11 @@ XCTAssertEqualObjects(input,reserialized)
     TEST(input, 0xde);
     
     //array32
-    NSMutableDictionary *dict32 = [[NSMutableDictionary alloc] init];
+    /*NSMutableDictionary *dict32 = [[NSMutableDictionary alloc] init];
     for(int i = 0; i < 65536; i++) {
         dict32[@(i)]=@YES;
     }
-    TEST(dict32, 0xdf);
+    TEST(dict32, 0xdf);*/
     
     
     

@@ -902,7 +902,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = $BUNDLE_LOADER;
+				TEST_HOST = "";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -927,7 +927,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = $BUNDLE_LOADER;
+				TEST_HOST = "";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
