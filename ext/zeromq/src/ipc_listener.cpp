@@ -127,9 +127,10 @@ int zmq::ipc_listener_t::set_address (const char *addr_)
         //char *tmpstr = tempnam (NULL, NULL);
 #ifndef __clang_analyzer__
         char *tmpstr = mktemp(NULL);
-#endif
         addr.assign (tmpstr);
         free (tmpstr);
+#endif
+
     }
 
     //  Get rid of the file associated with the UNIX domain socket that
