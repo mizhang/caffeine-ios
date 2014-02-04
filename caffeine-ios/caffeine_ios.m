@@ -9,5 +9,8 @@
 #import "caffeine_ios.h"
 
 @implementation caffeine_ios
-
++ (void)load {
+    [[NSUserDefaults standardUserDefaults] setValue:@"XCTestLog,CoverageFix"
+                                             forKey:@"XCTestObserverClass"];
+}
 @end

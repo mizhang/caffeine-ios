@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A266901189DFC61000F7051 /* CoverageFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A266900189DFC61000F7051 /* CoverageFix.m */; };
 		3A4222A51893766C001DD698 /* NSObject+MsgPack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4222A41893766C001DD698 /* NSObject+MsgPack.m */; };
 		3A4222EA1893A4E9001DD698 /* MsgPackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4222E91893A4E9001DD698 /* MsgPackTests.m */; };
 		3A6AA8D21892EE1700519A25 /* MsgPack2Objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AA8D11892EE1700519A25 /* MsgPack2Objc.m */; };
@@ -113,6 +114,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A2668FF189DFC60000F7051 /* CoverageFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverageFix.h; sourceTree = "<group>"; };
+		3A266900189DFC61000F7051 /* CoverageFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverageFix.m; sourceTree = "<group>"; };
 		3A4222A31893766C001DD698 /* NSObject+MsgPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MsgPack.h"; sourceTree = "<group>"; };
 		3A4222A41893766C001DD698 /* NSObject+MsgPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MsgPack.m"; sourceTree = "<group>"; };
 		3A4222E91893A4E9001DD698 /* MsgPackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgPackTests.m; sourceTree = "<group>"; };
@@ -387,6 +390,8 @@
 				3AF0F3571890DEAF00B6491F /* caffeine_iosTests.m */,
 				3AF0F3521890DEAF00B6491F /* Supporting Files */,
 				3A4222E91893A4E9001DD698 /* MsgPackTests.m */,
+				3A2668FF189DFC60000F7051 /* CoverageFix.h */,
+				3A266900189DFC61000F7051 /* CoverageFix.m */,
 			);
 			path = "caffeine-iosTests";
 			sourceTree = "<group>";
@@ -757,6 +762,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A266901189DFC61000F7051 /* CoverageFix.m in Sources */,
 				3A4222EA1893A4E9001DD698 /* MsgPackTests.m in Sources */,
 				3AF0F3581890DEAF00B6491F /* caffeine_iosTests.m in Sources */,
 			);
@@ -888,6 +894,8 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "caffeine-ios/caffeine-ios-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -917,6 +925,8 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "caffeine-ios/caffeine-ios-Prefix.pch";
 				INFOPLIST_FILE = "caffeine-iosTests/caffeine-iosTests-Info.plist";

@@ -107,7 +107,8 @@ XCTAssertEqualObjects(input,reserialized)
     TEST(input, buf1);
     
     //array32
-    NSMutableArray *in1 = [[NSMutableArray alloc] initWithCapacity:65536];
+#warning disabled
+    /*NSMutableArray *in1 = [[NSMutableArray alloc] initWithCapacity:65536];
     for (int i = 0; i < 65536; i++) {
         [in1 addObject:@YES];
     }
@@ -115,7 +116,7 @@ XCTAssertEqualObjects(input,reserialized)
     [in1 msgPackWithMutableData:data];
     bytesRead = 0;
     reserialized = [NSArray unMsgPackFromData:data bytesRead:&bytesRead];
-    XCTAssertEqualObjects(in1,reserialized);
+    XCTAssertEqualObjects(in1,reserialized);*/
     
 }
 
