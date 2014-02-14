@@ -11,6 +11,8 @@
 -(void) msgPackWithMutableData:(NSMutableData*) data;
 
 /**
+ The statement below is false.  Somebody should go in here and update this.  
+ @warning this documentation is unreliable
  
  This is sort of an interesting API choice, but it turns out that [NSData subdataWithRange:] is copy-free.  So we can just use that to return the new data.  See below for the benchmark code. */
 +(instancetype) unMsgPackFromData:(NSData*) data bytesRead:(int*)bytePtr;

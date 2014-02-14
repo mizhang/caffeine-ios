@@ -71,6 +71,21 @@ NS_ENUM(unsigned char, MSGPACK_TYPE) {
     
 };
 
+/**It's worth documenting why we need Yet Another MsgPack Library.
+ 
+ The first problem is that the obvious contender https://github.com/msgpack/msgpack-objectivec is ridiculously out of date and doesn't support the latest msgpack spec at all which adds features caffeine critically needs.  Strike one.
+ 
+ The second issue is that the C/C++ library on which the ObjC library is based doesn't support the new spec *well* https://github.com/msgpack/msgpack-c/issues/57.  I took a crack at it but I ended up in template hell.  The new spec caused something of a rift in the community, and my guess is that it's not really possible to make the C/C++ library behave reasonably because too many people depend on weird quirks.
+ 
+ The third issue is that C++ template hell underlying ObjC serialization is an all-around terrible idea.
+ 
+ So what we have here is a clean-room, pure ObjC implementation direct from the MsgPack spec.  There's enough test coverage that it's probably pretty good.
+ 
+ Unfortunately the caffeine license makes re-use in other projects complicated, so feel free to contact the author to discuss licensing terms.  This is, to put it mildly, the only sane ObjC MsgPack library that currently exists, so I'd recommend licensing it.
+ 
+ */
+ 
+ 
 @interface MsgPack2Objc : NSObject
 
 @end

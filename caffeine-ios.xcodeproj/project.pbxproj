@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1E383618AB9F4100AABCFA /* CaffeineClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E383518AB9F4100AABCFA /* CaffeineClient.m */; };
+		3A1E383918ACF0D100AABCFA /* CaffeineRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E383818ACF0D100AABCFA /* CaffeineRemoteObject.m */; };
+		3A1E383C18ACF14800AABCFA /* Foo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E383B18ACF14800AABCFA /* Foo.m */; };
+		3A1E383E18ACF1C800AABCFA /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1E383D18ACF1C800AABCFA /* libstdc++.dylib */; };
+		3A1E384018ACF3B600AABCFA /* MultiplatformTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E383F18ACF3B600AABCFA /* MultiplatformTests.m */; };
+		3A1E387E18AE041600AABCFA /* NSData+Y64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E387D18AE041600AABCFA /* NSData+Y64.m */; };
 		3A266901189DFC61000F7051 /* CoverageFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A266900189DFC61000F7051 /* CoverageFix.m */; };
 		3A4222A51893766C001DD698 /* NSObject+MsgPack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4222A41893766C001DD698 /* NSObject+MsgPack.m */; };
 		3A4222EA1893A4E9001DD698 /* MsgPackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4222E91893A4E9001DD698 /* MsgPackTests.m */; };
@@ -114,6 +120,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A1E383418AB9F4100AABCFA /* CaffeineClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaffeineClient.h; sourceTree = "<group>"; };
+		3A1E383518AB9F4100AABCFA /* CaffeineClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaffeineClient.m; sourceTree = "<group>"; };
+		3A1E383718ACF0D000AABCFA /* CaffeineRemoteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaffeineRemoteObject.h; sourceTree = "<group>"; };
+		3A1E383818ACF0D100AABCFA /* CaffeineRemoteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaffeineRemoteObject.m; sourceTree = "<group>"; };
+		3A1E383A18ACF14800AABCFA /* Foo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foo.h; sourceTree = "<group>"; };
+		3A1E383B18ACF14800AABCFA /* Foo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foo.m; sourceTree = "<group>"; };
+		3A1E383D18ACF1C800AABCFA /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		3A1E383F18ACF3B600AABCFA /* MultiplatformTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplatformTests.m; sourceTree = "<group>"; };
+		3A1E387C18AE041600AABCFA /* NSData+Y64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Y64.h"; sourceTree = "<group>"; };
+		3A1E387D18AE041600AABCFA /* NSData+Y64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Y64.m"; sourceTree = "<group>"; };
 		3A2668FF189DFC60000F7051 /* CoverageFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverageFix.h; sourceTree = "<group>"; };
 		3A266900189DFC61000F7051 /* CoverageFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverageFix.m; sourceTree = "<group>"; };
 		3A4222A31893766C001DD698 /* NSObject+MsgPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MsgPack.h"; sourceTree = "<group>"; };
@@ -314,6 +330,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1E383E18ACF1C800AABCFA /* libstdc++.dylib in Frameworks */,
 				3AF0F3501890DEAF00B6491F /* libcaffeine-ios.a in Frameworks */,
 				3AF0F34A1890DEAF00B6491F /* XCTest.framework in Frameworks */,
 				3AF0F34D1890DEAF00B6491F /* UIKit.framework in Frameworks */,
@@ -359,6 +376,7 @@
 		3AF0F33A1890DEAF00B6491F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A1E383D18ACF1C800AABCFA /* libstdc++.dylib */,
 				3AF0F33B1890DEAF00B6491F /* Foundation.framework */,
 				3AF0F3491890DEAF00B6491F /* XCTest.framework */,
 				3AF0F34C1890DEAF00B6491F /* UIKit.framework */,
@@ -371,7 +389,13 @@
 			children = (
 				3AF0F3401890DEAF00B6491F /* caffeine_ios.h */,
 				3AF0F3421890DEAF00B6491F /* caffeine_ios.m */,
+				3A1E383418AB9F4100AABCFA /* CaffeineClient.h */,
+				3A1E383518AB9F4100AABCFA /* CaffeineClient.m */,
 				3AF0F33E1890DEAF00B6491F /* Supporting Files */,
+				3A1E383718ACF0D000AABCFA /* CaffeineRemoteObject.h */,
+				3A1E383818ACF0D100AABCFA /* CaffeineRemoteObject.m */,
+				3A1E387C18AE041600AABCFA /* NSData+Y64.h */,
+				3A1E387D18AE041600AABCFA /* NSData+Y64.m */,
 			);
 			path = "caffeine-ios";
 			sourceTree = "<group>";
@@ -392,6 +416,9 @@
 				3A4222E91893A4E9001DD698 /* MsgPackTests.m */,
 				3A2668FF189DFC60000F7051 /* CoverageFix.h */,
 				3A266900189DFC61000F7051 /* CoverageFix.m */,
+				3A1E383A18ACF14800AABCFA /* Foo.h */,
+				3A1E383B18ACF14800AABCFA /* Foo.m */,
+				3A1E383F18ACF3B600AABCFA /* MultiplatformTests.m */,
 			);
 			path = "caffeine-iosTests";
 			sourceTree = "<group>";
@@ -690,11 +717,13 @@
 				3AF0F53A1890E06B00B6491F /* zmq_utils.cpp in Sources */,
 				3AF0F5041890E06B00B6491F /* ip.cpp in Sources */,
 				3AF0F5151890E06B00B6491F /* pgm_sender.cpp in Sources */,
+				3A1E387E18AE041600AABCFA /* NSData+Y64.m in Sources */,
 				3AF0F5331890E06B00B6491F /* trie.cpp in Sources */,
 				3AF0F5051890E06B00B6491F /* ipc_address.cpp in Sources */,
 				3AF0F51F1890E06B00B6491F /* push.cpp in Sources */,
 				3A4222A51893766C001DD698 /* NSObject+MsgPack.m in Sources */,
 				3AF0F52F1890E06B00B6491F /* tcp_connecter.cpp in Sources */,
+				3A1E383618AB9F4100AABCFA /* CaffeineClient.m in Sources */,
 				3AF0F5021890E06B00B6491F /* io_object.cpp in Sources */,
 				3AF0F5001890E06B00B6491F /* err.cpp in Sources */,
 				3AF0F5091890E06B00B6491F /* lb.cpp in Sources */,
@@ -737,6 +766,7 @@
 				3AF0F5101890E06B00B6491F /* object.cpp in Sources */,
 				3AF0F52A1890E06B00B6491F /* socket_base.cpp in Sources */,
 				3AF0F4FF1890E06B00B6491F /* epoll.cpp in Sources */,
+				3A1E383918ACF0D100AABCFA /* CaffeineRemoteObject.m in Sources */,
 				3AF0F5241890E06B00B6491F /* rep.cpp in Sources */,
 				3AF0F5121890E06B00B6491F /* own.cpp in Sources */,
 				3AF0F5131890E06B00B6491F /* pair.cpp in Sources */,
@@ -762,7 +792,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1E383C18ACF14800AABCFA /* Foo.m in Sources */,
 				3A266901189DFC61000F7051 /* CoverageFix.m in Sources */,
+				3A1E384018ACF3B600AABCFA /* MultiplatformTests.m in Sources */,
 				3A4222EA1893A4E9001DD698 /* MsgPackTests.m in Sources */,
 				3AF0F3581890DEAF00B6491F /* caffeine_iosTests.m in Sources */,
 			);
