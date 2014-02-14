@@ -66,9 +66,9 @@ static NSPointerArray *allInstances;
 - (NSData *)responseForRequest:(NSData *)data {
     NSAssert(dispatch_get_current_queue()==associatedQueue || [NSThread currentThread]==associatedThread, @"This isn't threadsafe");
     int rc = zmq_send(zmqSocket, data.bytes, data.length, 0);
-    NSAssert(rc==0, @"send error");
+    NSAssert(rc != -1, @"Send error");
     zmq_msg_t msg;
-    zmq_msg_init(&msg);
+    rc = zmq_msg_init(&msg);
     NSAssert(rc==0, @"Msg error");
     rc = zmq_msg_recv (&msg, zmqSocket, 0);
     NSAssert(rc != 0, @"Msg error 2");

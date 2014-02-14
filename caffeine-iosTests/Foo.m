@@ -12,7 +12,7 @@
 static NSURL *clientURL;
 
 + (void)load {
-    clientURL = [NSURL URLWithString:@"tcp://K21KJFQvTXRmdWRFNGF5QUxuNy5kcy5eQTRARExnRndDZ0xVKVJFVg--:c1Q2ZXJ9blpNLiVidHRCR0hCK0YqOG1yXkpKfXIjVjwpZHU4S1h1cA--@127.0.0.1:66666?K21KJFQvTXRmdWRFNGF5QUxuNy5kcy5eQTRARExnRndDZ0xVKVJFVg--"];
+    clientURL = [NSURL URLWithString:@"tcp://K21KJFQvTXRmdWRFNGF5QUxuNy5kcy5eQTRARExnRndDZ0xVKVJFVg--:c1Q2ZXJ9blpNLiVidHRCR0hCK0YqOG1yXkpKfXIjVjwpZHU4S1h1cA--@localhost:66666?K21KJFQvTXRmdWRFNGF5QUxuNy5kcy5eQTRARExnRndDZ0xVKVJFVg--"];
 }
 + (NSString *)helloWorldWithError:(NSError *__autoreleasing *)error {
     CaffeineClient *currentClient = [CaffeineClient clientOnThread:[NSThread currentThread] forURL:clientURL];
