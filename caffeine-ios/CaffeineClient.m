@@ -10,6 +10,8 @@
 #import "zmq.h"
 #import "NSObject+MsgPack.h"
 #import "NSData+Y64.h"
+#import <CommonCrypto/CommonDigest.h>
+#import "NSObject+CaffeinePack.h"
 static void *context;
 static NSPointerArray *allInstances;
 @interface CaffeineClient() {
@@ -33,9 +35,14 @@ static NSPointerArray *allInstances;
         NSString *urlForZmq = [NSString stringWithFormat:@"%@://%@:%@",url.scheme,url.host,url.port];
         zmqSocket = zmq_socket(context, ZMQ_REQ);
         if (url.user) {
+            int zero = 0;
+            int rc = 0;
+            rc = zmq_setsockopt(zmqSocket, ZMQ_CURVE_SERVER, &zero, sizeof(zero));
+            NSAssert(rc==0, @"sockopt error %d",errno);
+            
             //decode the URL
             NSData *userData = [[NSData alloc] initWithY64EncodedString:url.user];
-            int rc = zmq_setsockopt(zmqSocket, ZMQ_CURVE_PUBLICKEY, userData.bytes, userData.length);
+            rc = zmq_setsockopt(zmqSocket, ZMQ_CURVE_PUBLICKEY, userData.bytes, userData.length);
             NSAssert(rc==0, @"sockopt error %d",errno);
             NSData *passwordData = [[NSData alloc] initWithY64EncodedString:url.password];
             rc = zmq_setsockopt(zmqSocket, ZMQ_CURVE_SECRETKEY, passwordData.bytes, passwordData.length);
@@ -43,9 +50,11 @@ static NSPointerArray *allInstances;
             NSData *serverData = [[NSData alloc] initWithY64EncodedString:url.user];
             rc = zmq_setsockopt(zmqSocket, ZMQ_CURVE_SERVERKEY, serverData.bytes,serverData.length);
             NSAssert(rc==0, @"sockopt error");
+
             
         }
         int rc = zmq_connect(zmqSocket, [urlForZmq cStringUsingEncoding:NSUTF8StringEncoding]);
+        
         NSAssert(rc==0, @"Connection error?");
     }
     return self;
@@ -67,25 +76,48 @@ static NSPointerArray *allInstances;
     NSAssert(dispatch_get_current_queue()==associatedQueue || [NSThread currentThread]==associatedThread, @"This isn't threadsafe");
     int rc = zmq_send(zmqSocket, data.bytes, data.length, 0);
     NSAssert(rc != -1, @"Send error");
-    zmq_msg_t msg;
-    rc = zmq_msg_init(&msg);
+    zmq_msg_t *msg = malloc(sizeof(zmq_msg_t));
+    rc = zmq_msg_init(msg);
     NSAssert(rc==0, @"Msg error");
-    rc = zmq_msg_recv (&msg, zmqSocket, 0);
+    rc = zmq_msg_recv (msg, zmqSocket, 0);
     NSAssert(rc != 0, @"Msg error 2");
     
+#if !NS_BLOCK_ASSERTIONS
+    int64_t more = 0;
+    size_t more_size = sizeof more;
+    rc = zmq_getsockopt (zmqSocket, ZMQ_RCVMORE, &more, &more_size);
+    NSAssert(rc==0, @"Msg error 3");
+    NSAssert(more==1, @"Msg error 4");
+#endif
+    
+    rc = zmq_msg_recv(msg, zmqSocket, 0);
+    
+#if !NS_BLOCK_ASSERTIONS
+    more = 0;
+    more_size = sizeof more;
+    rc = zmq_getsockopt (zmqSocket, ZMQ_RCVMORE, &more, &more_size);
+    NSAssert(rc==0, @"Msg error 5");
+    NSAssert(more==0, @"Msg error 6");
+#endif
+    
+    uint8_t *msgData = zmq_msg_data(msg);
+    
     //thanks Apple!
-    NSData *returnMe = [[NSData alloc] initWithBytesNoCopy:zmq_msg_data(&msg) length:zmq_msg_size(&msg) deallocator:^(void *bytes, NSUInteger length) {
-        zmq_msg_close((zmq_msg_t*)&msg);
+    NSData *returnMe = [[NSData alloc] initWithBytesNoCopy:zmq_msg_data(msg) length:zmq_msg_size(msg) deallocator:^(void *bytes, NSUInteger length) {
+        printf("Zeroing a message\n");
+        zmq_msg_close(msg);
+        free(msg);
     }];
     return returnMe;
 }
 
 - (id)RPCClassMethod:(NSString *)method inClass:(NSString *)klass withArguments:(NSDictionary *)arguments {
-    NSDictionary *dict = @{@"_a": arguments,@"_c":klass,@"_m":method};
+    NSDictionary *dict = @{@"_a": [arguments caffeinePackObjectRepresentation],@"_c":klass,@"_s":method};
     NSMutableData *msgPackData = [[NSMutableData alloc] init];
     [dict msgPackWithMutableData:msgPackData];
     NSData *responseData = [self responseForRequest:msgPackData];
-    id responseObject = [NSObject unMsgPackFromData:responseData bytesRead:0];
+    int bytesRead = 0;
+    id responseObject = [NSObject unMsgPackFromData:responseData bytesRead:&bytesRead];
     return responseObject;
 }
 

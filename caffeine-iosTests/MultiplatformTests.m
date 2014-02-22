@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "Foo.h"
+#import "zmq.h"
+#import "zmq_test.h"
 
 @interface MultiplatformTests : XCTestCase
 
@@ -27,11 +29,13 @@
     [super tearDown];
 }
 
+
+
 - (void)testHelloWorld {
     NSError *err = nil;
     NSString *helloWorldResponse = [Foo helloWorldWithError:&err];
     XCTAssertNil(err, @"Got error unexpectedly");
-    XCTAssertEqual(helloWorldResponse, @"Hello world", @"Hello world wasn't as expected.");
+    XCTAssertEqualObjects(helloWorldResponse, @"hello world", @"Hello world wasn't as expected.");
 }
 
 @end

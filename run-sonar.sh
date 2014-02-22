@@ -76,7 +76,7 @@ function runCommand() {
 			set +x #echo off			
 		elif [ "$redirect" != "no" ]; then
 			set -x #echo on
-			$command "$@" > $redirect
+			$command "$@"
 			returnValue=$?	
 			set +x #echo off			
 		else
