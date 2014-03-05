@@ -112,6 +112,7 @@ static NSPointerArray *allInstances;
 }
 
 - (id)RPCClassMethod:(NSString *)method inClass:(NSString *)klass withArguments:(NSDictionary *)arguments {
+    if (!arguments) arguments = @{};
     NSDictionary *dict = @{@"_a": [arguments caffeinePackObjectRepresentation],@"_c":klass,@"_s":method};
     NSMutableData *msgPackData = [[NSMutableData alloc] init];
     [dict msgPackWithMutableData:msgPackData];
