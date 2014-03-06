@@ -5,8 +5,11 @@
 ## WARNING: edit your project parameters in sonar-project.properties rather than modifying this script
 #
 
-trap "echo 'Script interrupted by Ctrl+C'; stopProgress; exit 1" SIGHUP SIGINT SIGTERM
+LANG="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
 
+trap "echo 'Script interrupted by Ctrl+C'; stopProgress; exit 1" SIGHUP SIGINT SIGTERM
+set -x
 function startProgress() {
 	while true
 	do
@@ -229,8 +232,9 @@ if [ "$testScheme" = "" ]; then
 	echo "<?xml version='1.0' ?><!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-03.dtd'><coverage><sources></sources><packages></packages></coverage>" > sonar-reports/coverage.xml
 else
 
-	echo -n 'Running tests using xctool'	
-	runCommand sonar-reports/TEST-report.xml $xctoolCmdPrefix -scheme "$testScheme" -reporter junit GCC_GENERATE_TEST_COVERAGE_FILES=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES test
+	echo -n 'Running tests using xctool'
+	ZEROMQ_URL="tcp://"$(cat CAFFEINE_SERVER)
+	$xctoolCmdPrefix -scheme "$testScheme" -reporter junit GCC_GENERATE_TEST_COVERAGE_FILES=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES  GCC_PREPROCESSOR_DEFINITIONS="\$(value) CAFFEINE_OVERRIDE_URL=@\\\"${ZEROMQ_URL}\\\"" test > sonar-reports/TEST-report.xml
 
 	echo -n 'Computing coverage report'
 
@@ -260,7 +264,7 @@ else
 		fi
 	
 		# Run gcovr with the right options
-		runCommand "sonar-reports/coverage-${projectName%%.*}.xml" gcovr -r . $coverageFilesPath $excludedCommandLineFlags --xml 
+		gcovr -r . $coverageFilesPath $excludedCommandLineFlags --xml > "sonar-reports/coverage-${projectName%%.*}.xml"
 
 	done < tmpFileRunSonarSh
 	rm -rf tmpFileRunSonarSh
@@ -286,14 +290,14 @@ if [ "$oclint" = "on" ]; then
 	fi
 	
 	# Run OCLint with the right set of compiler options
-	runCommand no oclint-json-compilation-database $includedCommandLineFlags -- -report-type pmd -o sonar-reports/oclint.xml
+	runCommand no oclint-json-compilation-database $includedCommandLineFlags -- -enable-clang-static-analyzer -report-type pmd -o sonar-reports/oclint.xml
 else
 	echo 'Skipping OCLint (test purposes only!)'
 fi
 
 # SonarQube
 echo -n 'Running SonarQube using SonarQube Runner'
-runCommand /dev/stdout sonar-runner
+runCommand /dev/stdout sonar-runner -X
 	
 # Kill progress indicator
 stopProgress

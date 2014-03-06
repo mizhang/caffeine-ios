@@ -53,6 +53,10 @@ static NSPointerArray *allInstances;
 
             
         }
+#ifdef CAFFEINE_OVERRIDE_URL
+            NSLog(@"Overriding URL with command-line version %@",CAFFEINE_OVERRIDE_URL);
+            urlForZmq = CAFFEINE_OVERRIDE_URL;
+#endif
         int rc = zmq_connect(zmqSocket, [urlForZmq cStringUsingEncoding:NSUTF8StringEncoding]);
         
         NSAssert(rc==0, @"Connection error?");

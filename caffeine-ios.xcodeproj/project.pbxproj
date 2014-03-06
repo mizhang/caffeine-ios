@@ -587,8 +587,8 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/drew/Dropbox/Code/caffeine-ios/ext/libsodium",
-					"/Users/drew/Dropbox/Code/caffeine-ios/ext/libzmq",
+					ext/libsodium,
+					ext/libzmq,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -604,8 +604,8 @@
 				GCC_PREFIX_HEADER = "caffeine-ios/caffeine-ios-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/drew/Dropbox/Code/caffeine-ios/ext/libsodium",
-					"/Users/drew/Dropbox/Code/caffeine-ios/ext/libzmq",
+					ext/libsodium,
+					ext/libzmq,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
