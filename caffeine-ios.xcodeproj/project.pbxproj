@@ -22,6 +22,9 @@
 		3A4222A51893766C001DD698 /* NSObject+MsgPack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4222A41893766C001DD698 /* NSObject+MsgPack.m */; };
 		3A4222EA1893A4E9001DD698 /* MsgPackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4222E91893A4E9001DD698 /* MsgPackTests.m */; };
 		3A6AA8D21892EE1700519A25 /* MsgPack2Objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AA8D11892EE1700519A25 /* MsgPack2Objc.m */; };
+		3ADA100818C9B7AD00AC1DB9 /* caffeine_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AF0F3401890DEAF00B6491F /* caffeine_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3ADA101018C9BAAC00AC1DB9 /* CaffeineRemoteObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A1E383718ACF0D000AABCFA /* CaffeineRemoteObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3ADA101518C9BBBA00AC1DB9 /* CaffeineClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A1E383418AB9F4100AABCFA /* CaffeineClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AF0F33C1890DEAF00B6491F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF0F33B1890DEAF00B6491F /* Foundation.framework */; };
 		3AF0F3411890DEAF00B6491F /* caffeine_ios.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3AF0F3401890DEAF00B6491F /* caffeine_ios.h */; };
 		3AF0F3431890DEAF00B6491F /* caffeine_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0F3421890DEAF00B6491F /* caffeine_ios.m */; };
@@ -369,11 +372,25 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		3ADA100718C9B7A200AC1DB9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ADA101018C9BAAC00AC1DB9 /* CaffeineRemoteObject.h in Headers */,
+				3ADA101518C9BBBA00AC1DB9 /* CaffeineClient.h in Headers */,
+				3ADA100818C9B7AD00AC1DB9 /* caffeine_ios.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		3AF0F3371890DEAF00B6491F /* caffeine-ios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AF0F35B1890DEAF00B6491F /* Build configuration list for PBXNativeTarget "caffeine-ios" */;
 			buildPhases = (
+				3ADA100718C9B7A200AC1DB9 /* Headers */,
 				3AF0F3341890DEAF00B6491F /* Sources */,
 				3AF0F3351890DEAF00B6491F /* Frameworks */,
 				3AF0F3361890DEAF00B6491F /* CopyFiles */,
@@ -585,6 +602,12 @@
 					"$(inherited)",
 					"HAVE_LIBSODIUM=1",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					ext/libsodium,
+					$CONFIGURATION_BUILD_DIR/include,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					ext/libsodium,
@@ -592,6 +615,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/caffeine-ios";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -602,6 +626,12 @@
 				DSTROOT = /tmp/caffeine_ios.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "caffeine-ios/caffeine-ios-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					ext/libsodium,
+					$CONFIGURATION_BUILD_DIR/include,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					ext/libsodium,
@@ -609,6 +639,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/caffeine-ios";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

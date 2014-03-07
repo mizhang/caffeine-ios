@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>caffeineHeaders.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3ADA101118C9BB2200AC1DB9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3AF0F3371890DEAF00B6491F</key>
 		<dict>
 			<key>primary</key>

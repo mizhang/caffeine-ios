@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <caffeine-ios/CaffeineRemoteObject.h>
+#import <caffeine-ios/CaffeineClient.h>
 @interface caffeine_ios : NSObject
 
 @end
