@@ -8,8 +8,6 @@
 
 #import <XCTest/XCTest.h>
 #import "Foo.h"
-#import "zmq.h"
-#import "zmq_test.h"
 
 @interface MultiplatformTests : XCTestCase
 

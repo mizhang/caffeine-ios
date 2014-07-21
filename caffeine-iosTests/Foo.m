@@ -12,11 +12,11 @@
 static NSURL *clientURL;
 
 + (void)load {
-    clientURL = [NSURL URLWithString:@"tcp://yxDrGth0x7Mp6gZdcb2iFymACxoPbXgbgMFT7rELGmI-:WSKWXvnHyF7_jNEchETg1NoZte6Nsd3htA4CWRqZv1A-@127.0.0.1:55555?yxDrGth0x7Mp6gZdcb2iFymACxoPbXgbgMFT7rELGmI-"];
+    clientURL = [NSURL URLWithString:@"tcp://YmFkpcMa0YH_iuJ8bNtaZCmjL_FHtE4UBlKkm4wnQSY-:.bY4DWxI9vSgFMw7WZAmDgnUFIKW.NHIWrsAB..t3ms-@127.0.0.1:55555?YmFkpcMa0YH_iuJ8bNtaZCmjL_FHtE4UBlKkm4wnQSY-"];
 }
 
 + (NSString*)helloWorldWithError:(NSError**)error  {
-            CaffeineClient *currentClient = [CaffeineClient clientOnThread:[NSThread currentThread] forURL:clientURL];
+    CaffeineClient *currentClient = [[CaffeineClient alloc] initWithURL:clientURL];
     NSString *result = [currentClient RPCClassMethod:@"hello_world" inClass:NSStringFromClass([self class]) withArguments:nil];
     if ([result isKindOfClass:[NSError class]]) {
         *error = (NSError*)result;
