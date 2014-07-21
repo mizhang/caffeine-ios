@@ -24,7 +24,6 @@
 		3ADA101018C9BAAC00AC1DB9 /* CaffeineRemoteObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A1E383718ACF0D000AABCFA /* CaffeineRemoteObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3ADA101518C9BBBA00AC1DB9 /* CaffeineClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A1E383418AB9F4100AABCFA /* CaffeineClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AF0F33C1890DEAF00B6491F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF0F33B1890DEAF00B6491F /* Foundation.framework */; };
-		3AF0F3411890DEAF00B6491F /* caffeine_ios.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3AF0F3401890DEAF00B6491F /* caffeine_ios.h */; };
 		3AF0F3431890DEAF00B6491F /* caffeine_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0F3421890DEAF00B6491F /* caffeine_ios.m */; };
 		3AF0F34A1890DEAF00B6491F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF0F3491890DEAF00B6491F /* XCTest.framework */; };
 		3AF0F34B1890DEAF00B6491F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF0F33B1890DEAF00B6491F /* Foundation.framework */; };
@@ -43,19 +42,6 @@
 			remoteInfo = "caffeine-ios";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		3AF0F3361890DEAF00B6491F /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				3AF0F3411890DEAF00B6491F /* caffeine_ios.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3A1E383418AB9F4100AABCFA /* CaffeineClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaffeineClient.h; sourceTree = "<group>"; };
@@ -261,7 +247,6 @@
 				3ADA100718C9B7A200AC1DB9 /* Headers */,
 				3AF0F3341890DEAF00B6491F /* Sources */,
 				3AF0F3351890DEAF00B6491F /* Frameworks */,
-				3AF0F3361890DEAF00B6491F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -296,7 +281,7 @@
 		3AF0F3301890DEAF00B6491F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = DrewCrawfordApps;
 			};
 			buildConfigurationList = 3AF0F3331890DEAF00B6491F /* Build configuration list for PBXProject "caffeine-ios" */;
@@ -381,7 +366,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -424,7 +408,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -476,8 +459,6 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					ext/libsodium,
-					ext/libzmq,
 					"$(PROJECT_DIR)/ext/libnitrogen",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -501,8 +482,6 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					ext/libsodium,
-					ext/libzmq,
 					"$(PROJECT_DIR)/ext/libnitrogen",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -515,7 +494,6 @@
 		3AF0F35F1890DEAF00B6491F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/libcaffeine-ios.a";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -531,7 +509,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "caffeine-iosTests/caffeine-iosTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = "/Users/drew/Dropbox/Code/caffeine-ios/ext/libzmq";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -547,7 +525,6 @@
 		3AF0F3601890DEAF00B6491F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/libcaffeine-ios.a";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -559,7 +536,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "caffeine-ios/caffeine-ios-Prefix.pch";
 				INFOPLIST_FILE = "caffeine-iosTests/caffeine-iosTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = "/Users/drew/Dropbox/Code/caffeine-ios/ext/libzmq";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",

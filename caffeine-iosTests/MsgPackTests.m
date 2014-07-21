@@ -107,7 +107,6 @@ XCTAssertEqualObjects(input,reserialized)
     TEST(input, buf1);
     
     //array32
-#warning disabled
     /*NSMutableArray *in1 = [[NSMutableArray alloc] initWithCapacity:65536];
     for (int i = 0; i < 65536; i++) {
         [in1 addObject:@YES];
