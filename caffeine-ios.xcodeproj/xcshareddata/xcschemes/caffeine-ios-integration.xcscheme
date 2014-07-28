@@ -28,26 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3AF0F3471890DEAF00B6491F"
-               BuildableName = "caffeine-iosTests.xctest"
-               BlueprintName = "caffeine-iosTests"
-               ReferencedContainer = "container:caffeine-ios.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3AF3FF9A19861BB4009D1A0F"
-               BuildableName = "caffeine-iosIntegration.xctest"
-               BlueprintName = "caffeine-iosIntegration"
-               ReferencedContainer = "container:caffeine-ios.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

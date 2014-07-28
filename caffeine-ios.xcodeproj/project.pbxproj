@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A1E383618AB9F4100AABCFA /* CaffeineClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E383518AB9F4100AABCFA /* CaffeineClient.m */; };
 		3A1E383918ACF0D100AABCFA /* CaffeineRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E383818ACF0D100AABCFA /* CaffeineRemoteObject.m */; };
-		3A1E383C18ACF14800AABCFA /* Foo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E383B18ACF14800AABCFA /* Foo.m */; };
 		3A1E383E18ACF1C800AABCFA /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1E383D18ACF1C800AABCFA /* libstdc++.dylib */; };
-		3A1E384018ACF3B600AABCFA /* MultiplatformTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E383F18ACF3B600AABCFA /* MultiplatformTests.m */; };
 		3A1E387E18AE041600AABCFA /* NSData+Y64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E387D18AE041600AABCFA /* NSData+Y64.m */; };
 		3A266901189DFC61000F7051 /* CoverageFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A266900189DFC61000F7051 /* CoverageFix.m */; };
 		3A3EE58918B0B9D2001A105F /* NSObject+CaffeinePack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EE58818B0B9D2001A105F /* NSObject+CaffeinePack.m */; };
@@ -31,10 +29,24 @@
 		3AF0F3501890DEAF00B6491F /* libcaffeine-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF0F3381890DEAF00B6491F /* libcaffeine-ios.a */; };
 		3AF0F3561890DEAF00B6491F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AF0F3541890DEAF00B6491F /* InfoPlist.strings */; };
 		3AF0F3581890DEAF00B6491F /* caffeine_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0F3571890DEAF00B6491F /* caffeine_iosTests.m */; };
+		3AF3FF9C19861BB4009D1A0F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF0F3491890DEAF00B6491F /* XCTest.framework */; };
+		3AF3FF9D19861BB4009D1A0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF0F33B1890DEAF00B6491F /* Foundation.framework */; };
+		3AF3FF9E19861BB4009D1A0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF0F34C1890DEAF00B6491F /* UIKit.framework */; };
+		3AF3FFA419861BB4009D1A0F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AF3FFA219861BB4009D1A0F /* InfoPlist.strings */; };
+		3AF3FFA619861BB4009D1A0F /* caffeine_iosIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF3FFA519861BB4009D1A0F /* caffeine_iosIntegration.m */; };
+		3AF3FFAD19861BD4009D1A0F /* MultiplatformTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E383F18ACF3B600AABCFA /* MultiplatformTests.m */; };
+		3AF3FFAE19861BD7009D1A0F /* Foo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E383B18ACF14800AABCFA /* Foo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		3AF0F34E1890DEAF00B6491F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AF0F3301890DEAF00B6491F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AF0F3371890DEAF00B6491F;
+			remoteInfo = "caffeine-ios";
+		};
+		3AF3FFA819861BB4009D1A0F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3AF0F3301890DEAF00B6491F /* Project object */;
 			proxyType = 1;
@@ -48,10 +60,10 @@
 		3A1E383518AB9F4100AABCFA /* CaffeineClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaffeineClient.m; sourceTree = "<group>"; };
 		3A1E383718ACF0D000AABCFA /* CaffeineRemoteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaffeineRemoteObject.h; sourceTree = "<group>"; };
 		3A1E383818ACF0D100AABCFA /* CaffeineRemoteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaffeineRemoteObject.m; sourceTree = "<group>"; };
-		3A1E383A18ACF14800AABCFA /* Foo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foo.h; sourceTree = "<group>"; };
-		3A1E383B18ACF14800AABCFA /* Foo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foo.m; sourceTree = "<group>"; };
+		3A1E383A18ACF14800AABCFA /* Foo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Foo.h; path = "../caffeine-iosTests/Foo.h"; sourceTree = "<group>"; };
+		3A1E383B18ACF14800AABCFA /* Foo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Foo.m; path = "../caffeine-iosTests/Foo.m"; sourceTree = "<group>"; };
 		3A1E383D18ACF1C800AABCFA /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
-		3A1E383F18ACF3B600AABCFA /* MultiplatformTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplatformTests.m; sourceTree = "<group>"; };
+		3A1E383F18ACF3B600AABCFA /* MultiplatformTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultiplatformTests.m; path = "../caffeine-iosTests/MultiplatformTests.m"; sourceTree = "<group>"; };
 		3A1E387C18AE041600AABCFA /* NSData+Y64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Y64.h"; sourceTree = "<group>"; };
 		3A1E387D18AE041600AABCFA /* NSData+Y64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Y64.m"; sourceTree = "<group>"; };
 		3A2668FF189DFC60000F7051 /* CoverageFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverageFix.h; sourceTree = "<group>"; };
@@ -77,6 +89,11 @@
 		3AF0F3531890DEAF00B6491F /* caffeine-iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "caffeine-iosTests-Info.plist"; sourceTree = "<group>"; };
 		3AF0F3551890DEAF00B6491F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3AF0F3571890DEAF00B6491F /* caffeine_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = caffeine_iosTests.m; sourceTree = "<group>"; };
+		3AF3FF9B19861BB4009D1A0F /* caffeine-iosIntegration.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "caffeine-iosIntegration.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF3FFA119861BB4009D1A0F /* caffeine-iosIntegration-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "caffeine-iosIntegration-Info.plist"; sourceTree = "<group>"; };
+		3AF3FFA319861BB4009D1A0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3AF3FFA519861BB4009D1A0F /* caffeine_iosIntegration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = caffeine_iosIntegration.m; sourceTree = "<group>"; };
+		3AF3FFA719861BB4009D1A0F /* caffeine-iosIntegration-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "caffeine-iosIntegration-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +115,16 @@
 				3AF0F34A1890DEAF00B6491F /* XCTest.framework in Frameworks */,
 				3AF0F34D1890DEAF00B6491F /* UIKit.framework in Frameworks */,
 				3AF0F34B1890DEAF00B6491F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF3FF9819861BB4009D1A0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF3FF9C19861BB4009D1A0F /* XCTest.framework in Frameworks */,
+				3AF3FF9E19861BB4009D1A0F /* UIKit.framework in Frameworks */,
+				3AF3FF9D19861BB4009D1A0F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +167,7 @@
 				3AF0F3621890DF8300B6491F /* ext */,
 				3AF0F33D1890DEAF00B6491F /* caffeine-ios */,
 				3AF0F3511890DEAF00B6491F /* caffeine-iosTests */,
+				3AF3FF9F19861BB4009D1A0F /* caffeine-iosIntegration */,
 				3AF0F33A1890DEAF00B6491F /* Frameworks */,
 				3AF0F3391890DEAF00B6491F /* Products */,
 			);
@@ -150,6 +178,7 @@
 			children = (
 				3AF0F3381890DEAF00B6491F /* libcaffeine-ios.a */,
 				3AF0F3481890DEAF00B6491F /* caffeine-iosTests.xctest */,
+				3AF3FF9B19861BB4009D1A0F /* caffeine-iosIntegration.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,9 +227,6 @@
 				3A4222E91893A4E9001DD698 /* MsgPackTests.m */,
 				3A2668FF189DFC60000F7051 /* CoverageFix.h */,
 				3A266900189DFC61000F7051 /* CoverageFix.m */,
-				3A1E383A18ACF14800AABCFA /* Foo.h */,
-				3A1E383B18ACF14800AABCFA /* Foo.m */,
-				3A1E383F18ACF3B600AABCFA /* MultiplatformTests.m */,
 			);
 			path = "caffeine-iosTests";
 			sourceTree = "<group>";
@@ -221,6 +247,28 @@
 				3A6AA8CE1892ED3A00519A25 /* msgpack2-objc */,
 			);
 			path = ext;
+			sourceTree = "<group>";
+		};
+		3AF3FF9F19861BB4009D1A0F /* caffeine-iosIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				3A1E383A18ACF14800AABCFA /* Foo.h */,
+				3A1E383B18ACF14800AABCFA /* Foo.m */,
+				3A1E383F18ACF3B600AABCFA /* MultiplatformTests.m */,
+				3AF3FFA519861BB4009D1A0F /* caffeine_iosIntegration.m */,
+				3AF3FFA019861BB4009D1A0F /* Supporting Files */,
+			);
+			path = "caffeine-iosIntegration";
+			sourceTree = "<group>";
+		};
+		3AF3FFA019861BB4009D1A0F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AF3FFA119861BB4009D1A0F /* caffeine-iosIntegration-Info.plist */,
+				3AF3FFA219861BB4009D1A0F /* InfoPlist.strings */,
+				3AF3FFA719861BB4009D1A0F /* caffeine-iosIntegration-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +323,24 @@
 			productReference = 3AF0F3481890DEAF00B6491F /* caffeine-iosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		3AF3FF9A19861BB4009D1A0F /* caffeine-iosIntegration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AF3FFAC19861BB4009D1A0F /* Build configuration list for PBXNativeTarget "caffeine-iosIntegration" */;
+			buildPhases = (
+				3AF3FF9719861BB4009D1A0F /* Sources */,
+				3AF3FF9819861BB4009D1A0F /* Frameworks */,
+				3AF3FF9919861BB4009D1A0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AF3FFA919861BB4009D1A0F /* PBXTargetDependency */,
+			);
+			name = "caffeine-iosIntegration";
+			productName = "caffeine-iosIntegration";
+			productReference = 3AF3FF9B19861BB4009D1A0F /* caffeine-iosIntegration.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -283,6 +349,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = DrewCrawfordApps;
+				TargetAttributes = {
+					3AF3FF9A19861BB4009D1A0F = {
+						TestTargetID = 3AF0F3371890DEAF00B6491F;
+					};
+				};
 			};
 			buildConfigurationList = 3AF0F3331890DEAF00B6491F /* Build configuration list for PBXProject "caffeine-ios" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -298,6 +369,7 @@
 			targets = (
 				3AF0F3371890DEAF00B6491F /* caffeine-ios */,
 				3AF0F3471890DEAF00B6491F /* caffeine-iosTests */,
+				3AF3FF9A19861BB4009D1A0F /* caffeine-iosIntegration */,
 			);
 		};
 /* End PBXProject section */
@@ -308,6 +380,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF0F3561890DEAF00B6491F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF3FF9919861BB4009D1A0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF3FFA419861BB4009D1A0F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,11 +412,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A1E383C18ACF14800AABCFA /* Foo.m in Sources */,
 				3A266901189DFC61000F7051 /* CoverageFix.m in Sources */,
-				3A1E384018ACF3B600AABCFA /* MultiplatformTests.m in Sources */,
 				3A4222EA1893A4E9001DD698 /* MsgPackTests.m in Sources */,
 				3AF0F3581890DEAF00B6491F /* caffeine_iosTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF3FF9719861BB4009D1A0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF3FFAE19861BD7009D1A0F /* Foo.m in Sources */,
+				3AF3FFAD19861BD4009D1A0F /* MultiplatformTests.m in Sources */,
+				3AF3FFA619861BB4009D1A0F /* caffeine_iosIntegration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +436,11 @@
 			target = 3AF0F3371890DEAF00B6491F /* caffeine-ios */;
 			targetProxy = 3AF0F34E1890DEAF00B6491F /* PBXContainerItemProxy */;
 		};
+		3AF3FFA919861BB4009D1A0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AF0F3371890DEAF00B6491F /* caffeine-ios */;
+			targetProxy = 3AF3FFA819861BB4009D1A0F /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -355,6 +448,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				3AF0F3551890DEAF00B6491F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3AF3FFA219861BB4009D1A0F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AF3FFA319861BB4009D1A0F /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -549,6 +650,46 @@
 			};
 			name = Release;
 		};
+		3AF3FFAA19861BB4009D1A0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "caffeine-iosIntegration/caffeine-iosIntegration-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "caffeine-iosIntegration/caffeine-iosIntegration-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3AF3FFAB19861BB4009D1A0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "caffeine-iosIntegration/caffeine-iosIntegration-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "caffeine-iosIntegration/caffeine-iosIntegration-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,6 +719,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		3AF3FFAC19861BB4009D1A0F /* Build configuration list for PBXNativeTarget "caffeine-iosIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AF3FFAA19861BB4009D1A0F /* Debug */,
+				3AF3FFAB19861BB4009D1A0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

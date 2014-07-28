@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>caffeine-ios-integration.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>caffeine-ios-unit.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>caffeine-ios.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>3AF0F3471890DEAF00B6491F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3AF3FF9A19861BB4009D1A0F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
