@@ -1,8 +1,8 @@
 #!/bin/bash
 #require teamcitify
-
 set -e
 set -x
+source ~/.bash_profile #get python binaries in path
 DESTINATION="platform=iOS Simulator,name=iPhone Retina (4-inch),OS=latest"
 SCHEME="caffeine-ios-unit"
 WORKSPACE="caffeine-ios.xcodeproj/project.xcworkspace"
