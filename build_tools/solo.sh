@@ -1,10 +1,8 @@
 #!/bin/bash
-#require sonar-runner, teamcitify
-
+#require teamcitify
 
 set -e
 set -x
-source ~/.profile
 DESTINATION="platform=iOS Simulator,name=iPhone Retina (4-inch),OS=latest"
 SCHEME="caffeine-ios-unit"
 WORKSPACE="caffeine-ios.xcodeproj/project.xcworkspace"
