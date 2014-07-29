@@ -4,16 +4,14 @@ set -e
 set -x
 env
 PROPERTIES_FILE=`cat ${TEAMCITY_BUILD_PROPERTIES_FILE} | grep teamcity.configuration.properties.file | sed s/teamcity.configuration.properties.file=//g`
-
-echo $PROPERTIES_FILE
-cat $PROPERTIES_FILE
+CAFFEINE_BUILDNO=`cat ${PROPERTIES_FILE} | grep dep.caffeine_Selftest.build.number | sed s/dep.caffeine_Selftest.build.number=/g`
 
 exit 1
 source ~/.bash_profile #get python binaries in path
 DESTINATION="platform=iOS Simulator,name=iPhone Retina (4-inch),OS=latest"
 SCHEME="caffeine-ios-integration"
 WORKSPACE="caffeine-ios.xcodeproj/project.xcworkspace"
-SERVER_DOCKER_IMAGE="glados/caffeine-dev:12" #todo
+SERVER_DOCKER_IMAGE="glados/caffeine-dev:${CAFFEINE_BUILDNO}"
 
 #make docker magically work
 boot2docker up
