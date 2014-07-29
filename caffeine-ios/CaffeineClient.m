@@ -12,7 +12,7 @@
 #import "NSData+Y64.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "NSObject+CaffeinePack.h"
-static NSPointerArray *allInstances;
+static NSMutableDictionary *allInstances;
 @interface CaffeineClient() {
     @public //not really
     NSURL *originalURL;
@@ -20,6 +20,17 @@ static NSPointerArray *allInstances;
 }
 @end
 @implementation CaffeineClient
++ (instancetype)clientForURL:(NSURL *)url {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        allInstances = [[NSMutableDictionary alloc] init];
+    });
+    if (allInstances[url]) {
+        return allInstances[url];
+    }
+    allInstances[url] = [[CaffeineClient alloc] initWithURL:url];
+    return allInstances[url];
+}
 - (instancetype) initWithURL:(NSURL*) url {
     if (self = [super init]) {
 

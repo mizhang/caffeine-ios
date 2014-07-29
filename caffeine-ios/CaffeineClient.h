@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-/**A Caffeine client represents a client object.  An instance of this class isn't threadsafe, but you can use clientOnCurrentQueueForURL: to find an appropriate client. */
+/**A Caffeine client represents a remote endpoint (URL).  Usually there is just one instance of this class for every remote endpoint.  The instance is threadsafe.  The instance (in a future release) transparently manages multiple parallel requests.  */
+
 @interface CaffeineClient : NSObject
 
-- (instancetype) initWithURL:(NSURL*) url;
++ (instancetype) clientForURL:(NSURL*) url;
 
 
 /**Issue the request to the server and get the response */
