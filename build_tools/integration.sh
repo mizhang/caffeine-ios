@@ -15,7 +15,7 @@ echo $PATH path
 #make docker magically work
 boot2docker init
 boot2docker up
-DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375 #witchcraft!
+export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375 #witchcraft!
 docker pull "${SERVER_DOCKER_IMAGE}" #todo
 docker stop $(docker ps -a -q) #stop all containers
 docker run -p 55555:55555 -t --rm=true "${SERVER_DOCKER_IMAGE}" &
