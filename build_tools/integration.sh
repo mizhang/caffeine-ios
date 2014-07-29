@@ -18,8 +18,13 @@ boot2docker init
 set -e
 boot2docker up
 export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375 #witchcraft!
+
 docker pull "${SERVER_DOCKER_IMAGE}" #todo
+
+set +e
 docker stop $(docker ps -a -q) #stop all containers
+set -e
+
 docker run -p 55555:55555 -t --rm=true "${SERVER_DOCKER_IMAGE}" &
 sleep 2
 #figure out if job is still up
