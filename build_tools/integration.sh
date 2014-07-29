@@ -3,7 +3,7 @@
 set -e
 set -x
 env
-PROPERTIES_FILE=`cat ${TEAMCITY_BUILD_PROPERTIES_FILE} | grep teamcity.build.properties | sed s/teamcity.build.properties.file=//g`
+PROPERTIES_FILE=`cat ${TEAMCITY_BUILD_PROPERTIES_FILE} | grep teamcity.configuration.properties.file | sed s/teamcity.configuration.properties.file=//g`
 
 echo $PROPERTIES_FILE
 cat $PROPERTIES_FILE
