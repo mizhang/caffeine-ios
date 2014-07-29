@@ -2,8 +2,9 @@
 #require teamcitify
 set -e
 set -x
-echo ${dep.caffeine_Selftest.system.build.number}
 env
+echo ${dep.caffeine_Selftest.system.build.number}
+
 exit 1
 source ~/.bash_profile #get python binaries in path
 DESTINATION="platform=iOS Simulator,name=iPhone Retina (4-inch),OS=latest"
