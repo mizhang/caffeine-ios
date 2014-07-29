@@ -11,7 +11,7 @@ DESTINATION="platform=iOS Simulator,name=iPhone Retina (4-inch),OS=latest"
 SCHEME="caffeine-ios-integration"
 WORKSPACE="caffeine-ios.xcodeproj/project.xcworkspace"
 SERVER_DOCKER_IMAGE="glados/caffeine-dev:${CAFFEINE_BUILDNO}"
-
+echo $PATH path
 #make docker magically work
 boot2docker up
 DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375 #witchcraft!
