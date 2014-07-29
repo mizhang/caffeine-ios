@@ -12,7 +12,7 @@
 static NSURL *clientURL;
 
 + (void)load {
-    clientURL = [NSURL URLWithString:@"tcp://YmFkpcMa0YH_iuJ8bNtaZCmjL_FHtE4UBlKkm4wnQSY-:.bY4DWxI9vSgFMw7WZAmDgnUFIKW.NHIWrsAB..t3ms-@127.0.0.1:55555?YmFkpcMa0YH_iuJ8bNtaZCmjL_FHtE4UBlKkm4wnQSY-"];
+    clientURL = [NSURL URLWithString:@"tcp://YmFkpcMa0YH_iuJ8bNtaZCmjL_FHtE4UBlKkm4wnQSY-:.bY4DWxI9vSgFMw7WZAmDgnUFIKW.NHIWrsAB..t3ms-@192.168.59.103:55555?YmFkpcMa0YH_iuJ8bNtaZCmjL_FHtE4UBlKkm4wnQSY-"];
 }
 
 + (NSString*)helloWorldWithError:(NSError**)error  {
