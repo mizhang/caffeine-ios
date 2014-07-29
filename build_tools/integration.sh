@@ -3,6 +3,7 @@
 set -e
 set -x
 env
+cat ${TEAMCITY_BUILD_PROPERTIES_FILE}
 echo ${dep.caffeine_Selftest.system.build.number}
 
 exit 1
