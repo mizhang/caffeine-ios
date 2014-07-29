@@ -13,7 +13,9 @@ WORKSPACE="caffeine-ios.xcodeproj/project.xcworkspace"
 SERVER_DOCKER_IMAGE="glados/caffeine-dev:${CAFFEINE_BUILDNO}"
 echo $PATH path
 #make docker magically work
+set +e
 boot2docker init
+set -e
 boot2docker up
 export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375 #witchcraft!
 docker pull "${SERVER_DOCKER_IMAGE}" #todo
