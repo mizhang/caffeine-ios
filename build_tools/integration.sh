@@ -3,8 +3,9 @@
 set -e
 set -x
 env
-cat ${TEAMCITY_BUILD_PROPERTIES_FILE}
-echo ${dep.caffeine_Selftest.system.build.number}
+PROPERTIES_FILE=${TEAMCITY_BUILD_PROPERTIES_FILE} | grep teamcity.build.properties | sed s/teamcity.build.properties.file=//g
+echo $PROPERTIES_FILE
+cat $PROPERTIES_FILE
 
 exit 1
 source ~/.bash_profile #get python binaries in path
