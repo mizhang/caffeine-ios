@@ -19,4 +19,14 @@
     }
     return self;
 }
+- (NSString *)y64String {
+    NSMutableString *b64 = [[self base64EncodedStringWithOptions:0] mutableCopy];
+    [b64 replaceOccurrencesOfString:@"/" withString:@"_" options:0 range:NSMakeRange(0, b64.length)];
+    [b64 replaceOccurrencesOfString:@"=" withString:@"-" options:0 range:NSMakeRange(0, b64.length)];
+    [b64 replaceOccurrencesOfString:@"+" withString:@"." options:0 range:NSMakeRange(0, b64.length)];
+    return [b64 copy];
+}
+- (BOOL)isInsecureKey {
+    return [self.y64String isEqualToString:@"YmFkpcMa0YH_iuJ8bNtaZCmjL_FHtE4UBlKkm4wnQSY-"] || [self.y64String isEqualToString:@".bY4DWxI9vSgFMw7WZAmDgnUFIKW.NHIWrsAB..t3ms-"];
+}
 @end

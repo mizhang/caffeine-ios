@@ -16,6 +16,12 @@
 		3A4222A51893766C001DD698 /* NSObject+MsgPack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4222A41893766C001DD698 /* NSObject+MsgPack.m */; };
 		3A4222EA1893A4E9001DD698 /* MsgPackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4222E91893A4E9001DD698 /* MsgPackTests.m */; };
 		3A6AA8D21892EE1700519A25 /* MsgPack2Objc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AA8D11892EE1700519A25 /* MsgPack2Objc.m */; };
+		3A9385E4198D635700337D1E /* CFKeychainSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A9385E2198D635700337D1E /* CFKeychainSupport.h */; };
+		3A9385E5198D635700337D1E /* CFKeychainSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9385E3198D635700337D1E /* CFKeychainSupport.m */; };
+		3A9385E8198D665700337D1E /* NSURL+CaffeineURLTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A9385E6198D665700337D1E /* NSURL+CaffeineURLTools.h */; };
+		3A9385E9198D665700337D1E /* NSURL+CaffeineURLTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9385E7198D665700337D1E /* NSURL+CaffeineURLTools.m */; };
+		3A9385EB198D68B800337D1E /* URLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9385EA198D68B800337D1E /* URLTests.m */; };
+		3A9385ED198D69A300337D1E /* CFKeychainSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9385EC198D69A300337D1E /* CFKeychainSupportTests.m */; };
 		3AD0DD11197CE6B40093E48D /* libnitrogen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD0DD0F197CE6B40093E48D /* libnitrogen.a */; };
 		3AD0DD12197CE6B40093E48D /* libnitrogen.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AD0DD10197CE6B40093E48D /* libnitrogen.h */; };
 		3ADA100818C9B7AD00AC1DB9 /* caffeine_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AF0F3401890DEAF00B6491F /* caffeine_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -76,6 +82,12 @@
 		3A6AA8CF1892ED9F00519A25 /* MsgPackable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgPackable.h; sourceTree = "<group>"; };
 		3A6AA8D01892EE1700519A25 /* MsgPack2Objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgPack2Objc.h; sourceTree = "<group>"; };
 		3A6AA8D11892EE1700519A25 /* MsgPack2Objc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgPack2Objc.m; sourceTree = "<group>"; };
+		3A9385E2198D635700337D1E /* CFKeychainSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFKeychainSupport.h; sourceTree = "<group>"; };
+		3A9385E3198D635700337D1E /* CFKeychainSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFKeychainSupport.m; sourceTree = "<group>"; };
+		3A9385E6198D665700337D1E /* NSURL+CaffeineURLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+CaffeineURLTools.h"; sourceTree = "<group>"; };
+		3A9385E7198D665700337D1E /* NSURL+CaffeineURLTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CaffeineURLTools.m"; sourceTree = "<group>"; };
+		3A9385EA198D68B800337D1E /* URLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLTests.m; sourceTree = "<group>"; };
+		3A9385EC198D69A300337D1E /* CFKeychainSupportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFKeychainSupportTests.m; sourceTree = "<group>"; };
 		3AD0DD0F197CE6B40093E48D /* libnitrogen.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnitrogen.a; sourceTree = "<group>"; };
 		3AD0DD10197CE6B40093E48D /* libnitrogen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libnitrogen.h; sourceTree = "<group>"; };
 		3AF0F3381890DEAF00B6491F /* libcaffeine-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libcaffeine-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +219,10 @@
 				3A1E383818ACF0D100AABCFA /* CaffeineRemoteObject.m */,
 				3A1E387C18AE041600AABCFA /* NSData+Y64.h */,
 				3A1E387D18AE041600AABCFA /* NSData+Y64.m */,
+				3A9385E2198D635700337D1E /* CFKeychainSupport.h */,
+				3A9385E3198D635700337D1E /* CFKeychainSupport.m */,
+				3A9385E6198D665700337D1E /* NSURL+CaffeineURLTools.h */,
+				3A9385E7198D665700337D1E /* NSURL+CaffeineURLTools.m */,
 			);
 			path = "caffeine-ios";
 			sourceTree = "<group>";
@@ -227,6 +243,8 @@
 				3A4222E91893A4E9001DD698 /* MsgPackTests.m */,
 				3A2668FF189DFC60000F7051 /* CoverageFix.h */,
 				3A266900189DFC61000F7051 /* CoverageFix.m */,
+				3A9385EA198D68B800337D1E /* URLTests.m */,
+				3A9385EC198D69A300337D1E /* CFKeychainSupportTests.m */,
 			);
 			path = "caffeine-iosTests";
 			sourceTree = "<group>";
@@ -278,6 +296,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9385E8198D665700337D1E /* NSURL+CaffeineURLTools.h in Headers */,
+				3A9385E4198D635700337D1E /* CFKeychainSupport.h in Headers */,
 				3AD0DD12197CE6B40093E48D /* libnitrogen.h in Headers */,
 				3ADA101018C9BAAC00AC1DB9 /* CaffeineRemoteObject.h in Headers */,
 				3ADA101518C9BBBA00AC1DB9 /* CaffeineClient.h in Headers */,
@@ -398,6 +418,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9385E5198D635700337D1E /* CFKeychainSupport.m in Sources */,
+				3A9385E9198D665700337D1E /* NSURL+CaffeineURLTools.m in Sources */,
 				3A1E387E18AE041600AABCFA /* NSData+Y64.m in Sources */,
 				3A4222A51893766C001DD698 /* NSObject+MsgPack.m in Sources */,
 				3A3EE58918B0B9D2001A105F /* NSObject+CaffeinePack.m in Sources */,
@@ -413,8 +435,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A266901189DFC61000F7051 /* CoverageFix.m in Sources */,
+				3A9385ED198D69A300337D1E /* CFKeychainSupportTests.m in Sources */,
 				3A4222EA1893A4E9001DD698 /* MsgPackTests.m in Sources */,
 				3AF0F3581890DEAF00B6491F /* caffeine_iosTests.m in Sources */,
+				3A9385EB198D68B800337D1E /* URLTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +765,7 @@
 				3AF3FFAB19861BB4009D1A0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
